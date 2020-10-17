@@ -1,14 +1,14 @@
-#login{
-    font-size: 110px;
-    color: #78EFF6;
-}   
-
 .container{
     display:flex;
     justify-content: center;
     align-items: center;  
     flex-direction: column;  
-}
+
+    #login{
+        font-size: 110px;
+        color: #78EFF6;
+    }   
+    
 
 .login-text{
     width: 192px;
@@ -56,4 +56,5 @@
     border-color: #c4c4c4b6;
     width: 575px;
     height: 69px;
+}
 }
