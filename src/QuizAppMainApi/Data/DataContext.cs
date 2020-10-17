@@ -12,7 +12,6 @@ namespace QuizAppMainApi.Data
     {
         public DataContext(DbContextOptions options) : base(options){}
         public DbSet<Category> Categories { get; set; }
-        public DbSet<History> Histories{ get; set; }
         public DbSet<Quest> Quests { get; set; }
         public DbSet<Quiz> Quizzes{ get; set; }
         public DbSet<User> Users { get; set; }

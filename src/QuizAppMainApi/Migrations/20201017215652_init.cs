@@ -60,33 +60,6 @@ namespace QuizAppMainApi.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Histories",
-                columns: table => new
-                {
-                    HistoryId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    CorrectAnswer = table.Column<int>(nullable: false),
-                    UserId = table.Column<int>(nullable: false),
-                    QuizId = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Histories", x => x.HistoryId);
-                    table.ForeignKey(
-                        name: "FK_Histories_Quizzes_QuizId",
-                        column: x => x.QuizId,
-                        principalTable: "Quizzes",
-                        principalColumn: "QuizId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Histories_Users_UserId",
-                        column: x => x.UserId,
-                        principalTable: "Users",
-                        principalColumn: "UserId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Quests",
                 columns: table => new
                 {
@@ -108,16 +81,6 @@ namespace QuizAppMainApi.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Histories_QuizId",
-                table: "Histories",
-                column: "QuizId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Histories_UserId",
-                table: "Histories",
-                column: "UserId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Quests_QuizId",
                 table: "Quests",
                 column: "QuizId");
@@ -135,9 +98,6 @@ namespace QuizAppMainApi.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "Histories");
-
             migrationBuilder.DropTable(
                 name: "Quests");
 

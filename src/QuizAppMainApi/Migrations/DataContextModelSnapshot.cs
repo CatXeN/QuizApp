@@ -33,31 +33,6 @@ namespace QuizAppMainApi.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("QuizAppModels.Models.Entities.History", b =>
-                {
-                    b.Property<int>("HistoryId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("CorrectAnswer")
-                        .HasColumnType("int");
-
-                    b.Property<int>("QuizId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("HistoryId");
-
-                    b.HasIndex("QuizId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Histories");
-                });
-
             modelBuilder.Entity("QuizAppModels.Models.Entities.Quest", b =>
                 {
                     b.Property<int>("QuestId")
@@ -119,21 +94,6 @@ namespace QuizAppMainApi.Migrations
                     b.HasKey("UserId");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("QuizAppModels.Models.Entities.History", b =>
-                {
-                    b.HasOne("QuizAppModels.Models.Entities.Quiz", "Quiz")
-                        .WithMany()
-                        .HasForeignKey("QuizId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("QuizAppModels.Models.Entities.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("QuizAppModels.Models.Entities.Quest", b =>

@@ -10,6 +10,5 @@ namespace QuizAppModels.Models.Entities
         [Key]
         public int UserId { get; set; }
         public string Username { get; set; }
-        
     }
 }

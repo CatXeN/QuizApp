@@ -13,6 +13,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using QuizAppMainApi.Data;
+using QuizAppMainApi.Repositories;
 
 namespace QuizAppMainApi
 {
@@ -31,6 +32,7 @@ namespace QuizAppMainApi
             services.AddControllers();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddDbContext<DataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "QuizAppMainApi", Version = "v1" });
