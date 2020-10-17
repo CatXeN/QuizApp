@@ -7,6 +7,8 @@ import { MainLayoutComponent } from './core/layouts/main-layout/main-layout.comp
 import { MaterialModule } from './material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StartModule } from './modules/start-page/start.module';
+import { AuthModule } from './modules/auth/auth.module';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { StartModule } from './modules/start-page/start.module';
     AppRoutingModule,
     StartModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AuthModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
