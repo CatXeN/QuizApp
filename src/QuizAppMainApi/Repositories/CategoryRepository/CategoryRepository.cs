@@ -32,7 +32,6 @@ namespace QuizAppMainApi.Repositories
             await _context.SaveChangesAsync();
         }
 
-        
         public async Task<IEnumerable<CategoryInformation>> GetCategories()
         {
             var categories = await _context.Categories.ToListAsync();
