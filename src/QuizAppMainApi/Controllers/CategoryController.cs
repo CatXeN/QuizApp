@@ -15,6 +15,7 @@ namespace QuizAppMainApi.Controllers
     public class CategoryController : ControllerBase
     {
         private readonly ICategoryRepository _repository;
+
         public CategoryController(ICategoryRepository repository)
         {
             _repository = repository;
@@ -38,7 +39,6 @@ namespace QuizAppMainApi.Controllers
         public async Task<IActionResult> GetCategoryById(int id)
         {
             var category = await _repository.GetCategoryById(id);
-
             return Ok(category);
         }
     }

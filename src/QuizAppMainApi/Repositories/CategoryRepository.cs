@@ -17,6 +17,7 @@ namespace QuizAppMainApi.Repositories
     {
         private readonly DataContext _context;
         private readonly IMapper _mapper;
+
         public CategoryRepository(DataContext context, IMapper mapper)
         {
             _context = context;
@@ -27,6 +28,7 @@ namespace QuizAppMainApi.Repositories
         {
             var category = _mapper.Map<Category>(categoryInformation);
             await _context.Categories.AddAsync(category);
+
             await _context.SaveChangesAsync();
         }
 
@@ -34,7 +36,6 @@ namespace QuizAppMainApi.Repositories
         public async Task<IEnumerable<CategoryInformation>> GetCategories()
         {
             var categories = await _context.Categories.ToListAsync();
-
             return _mapper.Map<IEnumerable<CategoryInformation>>(categories);
         }
 
@@ -42,9 +43,7 @@ namespace QuizAppMainApi.Repositories
         {
             var category = await _context.Categories.
                 FirstOrDefaultAsync(x => x.CategoryId == categoryId);
-
             return _mapper.Map<CategoryInformation>(category);
-
         }
     }
 }
