@@ -2,17 +2,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CoreModule } from '../../core/layouts/core.module';
 import { StartPageComponent } from './components/start-page/start-page.component';
-import { StartPageRoutingModule } from './start-routing.module';
-import { MaterialModule } from 'src/app/material';
-import { HamburgerComponent } from './components/hamburger/hamburger.component'
+import { HomeRoutingModule } from './home-routing.module';
+import { HamburgerComponent } from './components/hamburger/hamburger.component';
+import { MaterialModule } from '../../shared/modules/material';
+
 
 @NgModule({
   imports: [
     CommonModule,
     CoreModule,
-    StartPageRoutingModule,
+    HomeRoutingModule,
     MaterialModule
   ],
   declarations: [StartPageComponent, HamburgerComponent]
 })
-export class StartModule { }
+export class HomeModule { }

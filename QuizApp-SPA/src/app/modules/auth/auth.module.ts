@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './components/login/login.component';
 import { CoreModule } from '../../core/layouts/core.module';
 import { AuthRoutingModule } from './auth-routing.module';
-import { MaterialModule } from 'src/app/material';
+import { MaterialModule } from 'src/app/shared/modules/material';
 
 
 @NgModule({
