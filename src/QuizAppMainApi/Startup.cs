@@ -14,6 +14,9 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using QuizAppMainApi.Data;
 using QuizAppMainApi.Repositories;
+using QuizAppMainApi.Repositories.Auth;
+using QuizAppMainApi.Services;
+using QuizAppModels.Config;
 
 namespace QuizAppMainApi
 {
@@ -34,6 +37,9 @@ namespace QuizAppMainApi
             services.AddDbContext<DataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<ICategoryRepository, CategoryRepository>();
             services.AddTransient<IQuizRepository, QuizRepository>();
+            services.AddTransient<IAuthRepository, AuthRepository>();
+            services.AddTransient<IAuthService, AuthService>();
+            services.Configure<AuthConfig>(options => Configuration.GetSection("Auth").Bind(options));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "QuizAppMainApi", Version = "v1" });

@@ -3,17 +3,15 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace QuizAppModels.Models.Entities
+namespace QuizAppModels.Models.Informations
 {
-    public class User
+    public class UserInformation
     {
-        [Key]
         public int UserId { get; set; }
         public string Username { get; set; }
         [EmailAddress]
         public string Email { get; set; }
-        public byte[] PasswordHash { get; set; }
-        public byte[] PasswordSalt { get; set; }
+        public string Password { get; set; }
         public string Role { get; set; }
     }
 }

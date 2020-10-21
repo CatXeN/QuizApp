@@ -1,4 +1,6 @@
+import { AuthService } from './../../service/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -7,11 +9,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
   hide = true;
 
-  constructor() { }
+  loginForm = new FormGroup({
+    username: new FormControl(''),
+    password: new FormControl('')
+  });
 
-  ngOnInit() {
+  constructor(private authService: AuthService) { }
+
+  ngOnInit(): void {
+  }
+
+  login(): void{
+    this.authService.login(this.loginForm.value).subscribe();
   }
 }

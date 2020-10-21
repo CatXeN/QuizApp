@@ -40,8 +40,7 @@ namespace QuizAppMainApi.Repositories
 
         public async Task<CategoryInformation> GetCategoryById(int categoryId)
         {
-            var category = await _context.Categories.
-                FirstOrDefaultAsync(x => x.CategoryId == categoryId);
+            var category = await _context.Categories.FirstOrDefaultAsync(x => x.CategoryId == categoryId);
             return _mapper.Map<CategoryInformation>(category);
         }
     }
