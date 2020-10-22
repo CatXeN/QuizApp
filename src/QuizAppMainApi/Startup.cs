@@ -15,6 +15,7 @@ using Microsoft.OpenApi.Models;
 using QuizAppMainApi.Data;
 using QuizAppMainApi.Repositories;
 using QuizAppMainApi.Repositories.Auth;
+using QuizAppMainApi.Repositories.Quests;
 using QuizAppMainApi.Services;
 using QuizAppModels.Config;
 
@@ -39,6 +40,7 @@ namespace QuizAppMainApi
             services.AddTransient<IQuizRepository, QuizRepository>();
             services.AddTransient<IAuthRepository, AuthRepository>();
             services.AddTransient<IAuthService, AuthService>();
+            services.AddTransient<IQuestRepository, QuestRepository>();
             services.Configure<AuthConfig>(options => Configuration.GetSection("Auth").Bind(options));
             services.AddSwaggerGen(c =>
             {
