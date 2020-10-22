@@ -1,0 +1,31 @@
+<div class="container">
+  <span id="login" class="material-icons">
+    login
+  </span>
+  <br>
+
+  <div class="login-text">
+    <p>Logowanie</p>
+  </div>
+
+  <mat-form-field class="form-input" appearance="outline">
+    <mat-label>Login</mat-label>
+    <input matInput placeholder="Podaj swój login">
+    <mat-icon matSuffix>
+      <span class="material-icons">login</span>
+    </mat-icon>
+  </mat-form-field>
+
+  <mat-form-field class="form-input" appearance="outline">
+    <mat-label>Hasło</mat-label>
+    <input matInput [type]="hide ? 'password' : 'text'">
+    <mat-icon matSuffix>
+      <span class="material-icons">vpn_key</span>
+    </mat-icon>
+  </mat-form-field>
+
+  <button class="log-in" mat-raised-button aria-label="Example icon button with a delete icon">ZALOGUJ</button>
+  <p class="cant-sign">Nie możesz się zalogować?</p>
+  <button class="register" mat-raised-button>Nie mam konta</button>
+
+</div>
