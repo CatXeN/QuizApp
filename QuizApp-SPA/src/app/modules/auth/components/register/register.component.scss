@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    span {
+        color: #78EFF6;
+        font-size: 150px;
+    }
+
+    .registerText {
+        font-size: 50px;
+        border-bottom: solid black 1px;
+    }
+
+    mat-form-field {
+        width: 400px;
+    }
+
+    .register {
+        margin-top: 30px;
+        width: 475px;
+        height: 83px;
+        background: #78EFF6;
+        border-radius: 5px;
+        font-size: 39px;
+    }
+}

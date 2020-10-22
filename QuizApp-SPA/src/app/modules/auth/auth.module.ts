@@ -1,10 +1,11 @@
+import { RegisterComponent } from './components/register/register.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './components/login/login.component';
 import { CoreModule } from '../../core/layouts/core.module';
 import { AuthRoutingModule } from './auth-routing.module';
 import { MaterialModule } from 'src/app/material';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,8 +14,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     CoreModule,
     AuthRoutingModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
-  declarations: [LoginComponent]
+  declarations: [LoginComponent, RegisterComponent]
 })
 export class AuthModule { }
