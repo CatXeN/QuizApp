@@ -31,13 +31,23 @@ namespace QuizAppMainApi.Repositories
 
         public async Task<IEnumerable<QuizInformation>> GetQuizzes()
         {
-            var quizzes = await _context.Quizzes.ToListAsync();
+            var quizzes = await _context.Quizzes.
+                Include(x => x.Category).
+                Include(x => x.User).
+                ToListAsync();
             return _mapper.Map<IEnumerable<QuizInformation>>(quizzes);
         }
 
         public async Task<QuizInformation> GetQuizById(int quizId)
         {
+<<<<<<< HEAD:src/QuizAppMainApi/Repositories/Quizzes/QuizRepository.cs
             var quiz = await _context.Quizzes.FirstOrDefaultAsync(x => x.CategoryId == quizId);
+=======
+            var quiz = await _context.Quizzes.
+                Include(x => x.User).
+                Include(x => x.Category).
+                FirstOrDefaultAsync(x => x.CategoryId == quizId);
+>>>>>>> QA-1:src/QuizAppMainApi/Repositories/QuizzRepository/QuizRepository.cs
             return _mapper.Map<QuizInformation>(quiz);
         }
     }
