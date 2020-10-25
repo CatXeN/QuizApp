@@ -5,7 +5,7 @@
 
 
   .toolbar {
-    display: inline-flex;
+    display: flex;
     justify-content: flex-end;
     align-items: center;
     width: 100%;
@@ -17,20 +17,19 @@
       height: 50px;
     }
 
-    button {
+    .newquiz-btn {
       color: white;
       background-color: #57CBD2;
       width: 100px;
       height: 35px;
       border-radius: 60px;
-    }
-
-    .newquiz-btn {
       margin: 20px;
     }
+
 
     ::ng-deep .mat-form-field-appearance-outline .mat-form-field-flex {
       height: 10px;
     }
   }
+
 }

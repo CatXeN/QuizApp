@@ -1,28 +1,28 @@
 .container {
+
+  display: list-item;
+  justify-content: center;
+  align-items: center;
+
+.header {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 20px;
   display: flex;
-  height: 100vh;
-  width: 150px;
-
-
-  .categories-bar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    height: 45px;
-    margin-bottom: 10px;
-    border-bottom: solid 5px #E0DCDC;
-    background-color: #EFEFEF;
-  }
-
-  .categories {
-    display: inline-block;
-    
-    justify-content: center;
-
-    th {
-      width: 100%;
-      border-bottom: 5px solid #57CBD2;
-    }
-  }
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 45px;
+  background-color: #E0DCDC;
+  border-bottom: 5px solid #E0DCDC;
+}
+.hamburger {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 20px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: #57CBD2 5px solid;
+}
 }

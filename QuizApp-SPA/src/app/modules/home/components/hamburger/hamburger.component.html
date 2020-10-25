@@ -1,8 +1,11 @@
-<div class="container">
-  <div class="categories-bar">
-    Categories
-  <tr *ngFor="let category of categories">
-    <th><p>{{category.name}}</p></th>
-  </tr>
+<form class="container">
+<div class="header">
+  Categories
 </div>
+<div class="hamburger" *ngFor="let cat of categories" >
+<ol>
+  <dt>{{cat.name}}</dt>
+</ol>
+
 </div>
+</form>

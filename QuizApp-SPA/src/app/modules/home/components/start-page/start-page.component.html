@@ -9,6 +9,10 @@
     <!-- {{User.name.value}} -->
     <a>User1</a>
     <img src="../../../../../assets/images/account.png" class="acc-icon" alt="account image">
+    <button mat-icon-button (click)='isOpened()' class="hamburger-btn">
+      <mat-icon>format_list_bulleted</mat-icon>
+    </button>
+    
   </div>
-  <app-hamburger></app-hamburger>
+  <app-hamburger *ngIf="!burger"></app-hamburger>
 </form>
