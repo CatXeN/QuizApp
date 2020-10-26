@@ -1,11 +1,12 @@
-<form class="container">
-<div class="header">
-  Categories
+<div class="container">
+  <div class="header">
+    Categories
+  </div>
+  <div class="hamburger">
+    <mat-selection-list [multiple]="false">
+      <mat-list-option *ngFor="let cat of categories">
+        <a>{{cat.name}}</a>
+      </mat-list-option>
+    </mat-selection-list>
+  </div>
 </div>
-<div class="hamburger" *ngFor="let cat of categories" >
-<ol>
-  <dt>{{cat.name}}</dt>
-</ol>
-
-</div>
-</form>

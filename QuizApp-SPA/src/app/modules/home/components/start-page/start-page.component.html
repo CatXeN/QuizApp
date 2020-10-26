@@ -1,18 +1,21 @@
-<form class="container">
-  <div class='toolbar'>
-    <mat-form-field appearance="outline">
-      <mat-label></mat-label>
-      <input matInput placeholder="">
-      <mat-icon matSuffix>search</mat-icon>
-    </mat-form-field>
-    <button mat-stroked-button class="newquiz-btn">Basic</button>
-    <!-- {{User.name.value}} -->
-    <a>User1</a>
-    <img src="../../../../../assets/images/account.png" class="acc-icon" alt="account image">
-    <button mat-icon-button (click)='isOpened()' class="hamburger-btn">
-      <mat-icon>format_list_bulleted</mat-icon>
-    </button>
-    
+<div class="container">
+  <div class="topbar">
+    <div class="left">
+      <button mat-icon-button (click)='isOpened()' class="hamburger-btn">
+        <mat-icon>format_list_bulleted</mat-icon>
+      </button>
+      <app-hamburger *ngIf="!burger"></app-hamburger>
+    </div>
+    <div class="right">
+      <mat-form-field appearance="outline">
+        <mat-label></mat-label>
+        <input matInput placeholder="">
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+      <button mat-stroked-button class="newquiz-btn">Make quiz</button>
+      <!-- {{User.name.value}} -->
+      <a>User1</a>
+      <img src="../../../../../assets/images/account.png" class="acc-icon" alt="account image">
+    </div>
   </div>
-  <app-hamburger *ngIf="!burger"></app-hamburger>
-</form>
+</div>

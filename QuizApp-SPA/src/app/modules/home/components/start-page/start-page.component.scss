@@ -3,16 +3,37 @@
   width: 100%;
   height: 100%;
 
-
-  .toolbar {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+  .topbar {
     width: 100%;
     height: 50px;
     background-color: #EFEFEF;
+    display: flex;
+    align-items: center;
+
+    .left {
+      width: 5%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      flex-direction: column;
+
+      .hamburger-btn {
+        align-items: start;
+        display: flex;
+        justify-content: start;
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      width: 95%;
+    }
 
     .acc-icon {
+      right: 0;
       width: 55px;
       height: 50px;
     }
@@ -26,10 +47,8 @@
       margin: 20px;
     }
 
-
     ::ng-deep .mat-form-field-appearance-outline .mat-form-field-flex {
       height: 10px;
     }
   }
-
 }
