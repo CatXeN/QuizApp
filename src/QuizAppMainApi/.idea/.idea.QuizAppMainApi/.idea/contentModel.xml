@@ -104,6 +104,7 @@
     </e>
     <e p="C:\Users\catxe\source\repos\QuizApp\tests\QuizAppMain.Tests.Integration" t="IncludeRecursive">
       <e p="bin" t="ExcludeRecursive" />
+      <e p="CategoryContollerTest.cs" t="Include" />
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
           <e p="netcoreapp3.1" t="Include">
