@@ -24,6 +24,7 @@ import { NgModule } from '@angular/core';
 import { LayoutModule } from '@angular/cdk/layout';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
     imports: [
@@ -51,7 +52,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
       MatAutocompleteModule,
       MatSliderModule,
       MatStepperModule,
-      MatExpansionModule
+      MatExpansionModule,
+      MatMenuModule
     ],
     exports: [
       LayoutModule,
@@ -78,7 +80,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
       MatAutocompleteModule,
       MatSliderModule,
       MatStepperModule,
-      MatExpansionModule
+      MatExpansionModule,
+      MatMenuModule
     ]
   })
   export class MaterialModule { }

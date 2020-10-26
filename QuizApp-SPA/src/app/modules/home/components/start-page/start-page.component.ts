@@ -7,8 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartPageComponent implements OnInit {
 
+  public burger: boolean = false;
+
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+
+  }
+
+  isOpened(): void {
+   this.burger = !this.burger;
   }
 }
