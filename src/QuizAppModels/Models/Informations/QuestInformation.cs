@@ -12,6 +12,7 @@ namespace QuizAppModels.Models.Informations
         public string AnswerC { get; set; }
         public string AnswerD { get; set; }
         public int CorrectAnswer { get; set; }
+        public string ImageUrl { get; set; }
         public int QuizId { get; set; }
         public Quiz Quiz { get; set; }
     }
