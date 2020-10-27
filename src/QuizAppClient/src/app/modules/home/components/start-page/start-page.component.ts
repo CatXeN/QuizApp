@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartPageComponent implements OnInit {
 
-  public burger: boolean = false;
+  public burger: boolean = true;
 
   constructor() { }
 
