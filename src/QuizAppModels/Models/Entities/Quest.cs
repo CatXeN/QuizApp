@@ -19,6 +19,5 @@ namespace QuizAppModels.Models.Entities
         public int CorrectAnswer { get; set; }
         public int QuizId { get; set; }
         public virtual Quiz Quiz { get; set; }
-
     }
 }
