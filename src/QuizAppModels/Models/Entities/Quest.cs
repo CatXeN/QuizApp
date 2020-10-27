@@ -17,6 +17,7 @@ namespace QuizAppModels.Models.Entities
         public string AnswerC { get; set; }
         public string AnswerD { get; set; }
         public int CorrectAnswer { get; set; }
+        public string ImageUrl { get; set; }
         public int QuizId { get; set; }
         public virtual Quiz Quiz { get; set; }
     }
