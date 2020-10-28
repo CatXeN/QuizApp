@@ -24,7 +24,7 @@ namespace QuizAppMain.Tests.Unit.ControllersTests
         }
 
         [Fact]
-        public async Task AddQuiz_ModelIsValid_ReturnObjctResault()
+        public async Task AddQuiz_ModelIsValid_ReturnObjctResult()
         {
             _repository.Setup(x => x.AddQuiz(It.IsAny<QuizInformation>()));
 
