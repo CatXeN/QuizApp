@@ -53,11 +53,11 @@ namespace QuizAppMainApi.Migrations
                     b.Property<string>("AnswerD")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Content")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("CorrectAnswer")
                         .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");

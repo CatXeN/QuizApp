@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace QuizAppMainApi.Migrations
 {
-    public partial class init : Migration
+    public partial class InitDatabase : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -25,7 +26,11 @@ namespace QuizAppMainApi.Migrations
                 {
                     UserId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Username = table.Column<string>(nullable: true)
+                    Username = table.Column<string>(nullable: true),
+                    Email = table.Column<string>(nullable: true),
+                    PasswordHash = table.Column<byte[]>(nullable: true),
+                    PasswordSalt = table.Column<byte[]>(nullable: true),
+                    Role = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -39,6 +44,8 @@ namespace QuizAppMainApi.Migrations
                     QuizId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(nullable: true),
+                    Description = table.Column<string>(nullable: true),
+                    ImageUrl = table.Column<string>(nullable: true),
                     UserId = table.Column<int>(nullable: false),
                     CategoryId = table.Column<int>(nullable: false)
                 },
@@ -65,8 +72,14 @@ namespace QuizAppMainApi.Migrations
                 {
                     QuestId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Content = table.Column<string>(nullable: true),
+                    Description = table.Column<string>(nullable: true),
                     Time = table.Column<int>(nullable: false),
+                    AnswerA = table.Column<string>(nullable: true),
+                    AnswerB = table.Column<string>(nullable: true),
+                    AnswerC = table.Column<string>(nullable: true),
+                    AnswerD = table.Column<string>(nullable: true),
+                    CorrectAnswer = table.Column<int>(nullable: false),
+                    ImageUrl = table.Column<string>(nullable: true),
                     QuizId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>

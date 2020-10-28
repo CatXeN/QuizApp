@@ -10,8 +10,8 @@ using QuizAppMainApi.Data;
 namespace QuizAppMainApi.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20201027213742_AddedImageUrl")]
-    partial class AddedImageUrl
+    [Migration("20201028081737_InitDatabase")]
+    partial class InitDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -55,11 +55,11 @@ namespace QuizAppMainApi.Migrations
                     b.Property<string>("AnswerD")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Content")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("CorrectAnswer")
                         .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
