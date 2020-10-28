@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using QuizAppMainApi.Data;
 using QuizAppMainApi.Repositories;
 using QuizAppModels.Models.Informations;
+using QuizAppModels.Models.Validators;
 
 namespace QuizAppMainApi.Controllers
 {
@@ -15,15 +16,22 @@ namespace QuizAppMainApi.Controllers
     public class CategoryController : ControllerBase
     {
         private readonly ICategoryRepository _repository;
+        private readonly CategoryValidator _validator;
 
         public CategoryController(ICategoryRepository repository)
         {
             _repository = repository;
+            _validator = new CategoryValidator();
         }
 
         [HttpPost]
         public async Task<IActionResult> AddCategory(CategoryInformation categoryInformation)
         {
+            var result = await _validator.ValidateAsync(categoryInformation);
+
+            if (!result.IsValid) 
+                return BadRequest(result.Errors);
+
             await _repository.AddCategory(categoryInformation);
             return Ok();
         }

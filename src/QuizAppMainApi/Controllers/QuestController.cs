@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using QuizAppMainApi.Repositories.Quests;
 using QuizAppModels.Models.Informations;
+using QuizAppModels.Models.Validators;
 
 namespace QuizAppMainApi.Controllers
 {
@@ -10,15 +11,21 @@ namespace QuizAppMainApi.Controllers
     public class QuestController : ControllerBase
     {
         private readonly IQuestRepository _repository;
-        
+        private readonly QuestValidator _validator;
         public QuestController(IQuestRepository repository)
         {
             _repository = repository;
+            _validator = new QuestValidator();
         }
         
         [HttpPost]
         public async Task<IActionResult> AddQuest(QuestInformation questInformation)
         {
+            var result = await _validator.ValidateAsync(questInformation);
+
+            if (!result.IsValid)
+                return BadRequest(result.Errors);
+            
             await _repository.AddQuest(questInformation);
             return Ok();
         }
