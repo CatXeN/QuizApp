@@ -21,6 +21,8 @@ namespace QuizAppModels.Models.Validators
                 .NotEmpty().WithMessage("Please specify a answer");
             RuleFor(x => x.CorrectAnswer)
                 .GreaterThanOrEqualTo(0);
+            RuleFor(x => x.QuizId)
+                .GreaterThan(0).WithMessage("Contact with administration");
         }
     }
 }
