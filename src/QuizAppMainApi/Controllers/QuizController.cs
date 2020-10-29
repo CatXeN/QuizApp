@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using QuizAppMainApi.Repositories;
 using QuizAppModels.Models.Informations;
+using QuizAppModels.Models.Validators;
 
 namespace QuizAppMainApi.Controllers
 {
@@ -14,15 +15,21 @@ namespace QuizAppMainApi.Controllers
     public class QuizController : ControllerBase
     {
         private readonly IQuizRepository _repository;
+        private readonly QuizValidator _validator;
 
         public QuizController(IQuizRepository repository)
         {
             _repository = repository;
+            _validator = new QuizValidator();
         }
 
         [HttpPost]
         public async Task<IActionResult> AddQuiz(QuizInformation quizInformation)
         {
+            var result = await _validator.ValidateAsync(quizInformation);
+            if (!result.IsValid)
+                return BadRequest(result.Errors);
+                
             await _repository.AddQuiz(quizInformation);
             return Ok();
         }

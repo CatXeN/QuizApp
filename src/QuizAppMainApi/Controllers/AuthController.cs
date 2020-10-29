@@ -9,6 +9,7 @@ using QuizAppMainApi.Repositories.Auth;
 using QuizAppMainApi.Services;
 using QuizAppModels.Models.Entities;
 using QuizAppModels.Models.Informations;
+using QuizAppModels.Models.Validators;
 
 namespace QuizAppMainApi.Controllers
 {
@@ -18,16 +19,22 @@ namespace QuizAppMainApi.Controllers
     {
         private readonly IAuthRepository _repository;
         private readonly IAuthService _service;
+        private readonly UserValidator _validator;
 
         public AuthController(IAuthRepository repository, IAuthService service)
         {
             _repository = repository;
             _service = service;
+            _validator = new UserValidator();
         }
 
         [HttpPost("register")]
         public async Task<IActionResult> Register(UserInformation userInformation)
         {
+            var result = await _validator.ValidateAsync(userInformation);
+            if (!result.IsValid)
+                return BadRequest(result.Errors);
+
             userInformation.Username = userInformation.Username.ToLower();
 
             if (await _repository.UserExists(userInformation.Username))
