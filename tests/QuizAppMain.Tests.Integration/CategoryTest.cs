@@ -12,6 +12,7 @@ using QuizAppMainApi;
 using QuizAppMainApi.Data;
 using QuizAppModels.Models.Informations;
 using Xunit;
+using Xunit.Sdk;
 
 namespace QuizAppMain.Tests.Unit
 {
@@ -51,6 +52,7 @@ namespace QuizAppMain.Tests.Unit
             var category = JsonConvert.DeserializeObject<CategoryInformation>(stringResponse);
 
             Assert.IsType<CategoryInformation>(category);
+            Assert.Equal(1, category.CategoryId);
         }
     }
 }
