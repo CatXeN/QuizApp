@@ -1,0 +1,29 @@
+.quiz-card {
+    background-color: #57CBD2;
+    width: 300px;
+    height: 250px;
+    margin: 20px;
+    box-shadow: 21px 28px 42px -24px rgba(0,0,0,0.75);
+    display: inline-block;
+    border-radius: 30px;
+
+    .quiz-img {
+      margin-left: 60px;
+      width: 192px;
+      height: 108px;
+      margin-bottom: 150px;
+    }
+    
+    mat-card-content {
+      margin-top: 65px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+
+      .tittle {
+        font-size: 25px;
+      }
+      
+    }
+  }

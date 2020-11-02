@@ -25,6 +25,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
     imports: [
@@ -53,7 +54,8 @@ import {MatMenuModule} from '@angular/material/menu';
       MatSliderModule,
       MatStepperModule,
       MatExpansionModule,
-      MatMenuModule
+      MatMenuModule,
+      MatCardModule
     ],
     exports: [
       LayoutModule,
@@ -81,7 +83,8 @@ import {MatMenuModule} from '@angular/material/menu';
       MatSliderModule,
       MatStepperModule,
       MatExpansionModule,
-      MatMenuModule
+      MatMenuModule,
+      MatCardModule
     ]
   })
   export class MaterialModule { }

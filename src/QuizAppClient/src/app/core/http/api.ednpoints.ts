@@ -6,6 +6,9 @@ export const apiEndpoints = {
         login: `${environment.apiUrl}/api/auth/login`
     },
     category: {
-        getCategory: `${environment.apiUrl}api/Category`
+        getCategory: `${environment.apiUrl}/api/Category`
+    },
+    quiz: {
+        getQuiz: `${environment.apiUrl}/api/Quiz `
     }
 };
