@@ -1,29 +1,47 @@
 .quiz-card {
-    background-color: #57CBD2;
-    width: 300px;
-    height: 250px;
-    margin: 20px;
-    box-shadow: 21px 28px 42px -24px rgba(0,0,0,0.75);
-    display: inline-block;
-    border-radius: 30px;
+  background-image: url('../../../../../assets/images/note.png');
+  background-size: cover;
+  border-bottom-right-radius: 45%;
+  width: 300px;
+  height: 250px;
+  margin: 10px;
+  box-shadow: 21px 28px 42px -24px rgba(0, 0, 0, 0.75);
+  display: inline-block;
 
-    .quiz-img {
-      margin-left: 60px;
-      width: 192px;
-      height: 108px;
-      margin-bottom: 150px;
+
+
+  .quiz-img {
+    margin-left: 60px;
+    width: 192px;
+    height: 108px;
+    margin-bottom: 150px;
+  }
+
+  mat-card-content {
+    margin-top: 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    .description {
+        visibility: hidden;
     }
-    
-    mat-card-content {
-      margin-top: 65px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
 
-      .tittle {
-        font-size: 25px;
-      }
-      
+    .tittle {
+      font-size: 25px;
     }
   }
+}
+ .quiz-card:hover {
+  margin: 10px;
+  box-shadow: 21px 28px 42px -24px rgba(0, 0, 0, 0.75);
+  border-bottom-right-radius: 0%;
+  background-color: #57CBD2;
+  background-image: none;
+
+  .description {
+    visibility: visible !important;
+  }
+
+}
