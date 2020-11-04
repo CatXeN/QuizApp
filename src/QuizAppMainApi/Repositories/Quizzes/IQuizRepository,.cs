@@ -12,5 +12,6 @@ namespace QuizAppMainApi.Repositories
         Task AddQuiz(QuizInformation quizInformation);
         Task<IEnumerable<QuizInformation>> GetQuizzes();
         Task<QuizInformation> GetQuizById(int id);
+        Task<IEnumerable<QuizInformation>> GetTwentyQuiz();
     }
 }

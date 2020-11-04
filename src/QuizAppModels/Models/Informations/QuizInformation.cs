@@ -12,8 +12,8 @@ namespace QuizAppModels.Models.Informations
         public string Description { get; set; }
         public string ImageUrl { get; set; }
         public int UserId { get; set; }
-        public User User { get; set; }
+        public UserInformation User { get; set; }
         public int CategoryId { get; set; }
-        public Category Category { get; set; }
+        public CategoryInformation Category { get; set; }
     }
 }
