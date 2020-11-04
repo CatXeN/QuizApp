@@ -12,7 +12,7 @@ export class QuizCardComponent implements OnInit {
 
   quizList: any[];
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getQuizList();
   }
 

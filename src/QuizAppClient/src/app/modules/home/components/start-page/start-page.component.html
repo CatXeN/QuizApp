@@ -6,7 +6,7 @@
       <button mat-button color="primary">JD</button>
       <button mat-button class="newquiz-btn">Make quiz</button>
       <button mat-button [matMenuTriggerFor]="afterMenu">Categories</button>
-      <mat-menu #afterMenu="matMenu" xPosition="after" class="categories-menu"> 
+      <mat-menu #afterMenu="matMenu" xPosition="after" class="categories-menu">
         <button mat-menu-item *ngFor="let cat of categories">{{cat.name}}</button>
       </mat-menu>
     </div>
@@ -16,8 +16,6 @@
         <input matInput placeholder="">
         <mat-icon matSuffix>search</mat-icon>
       </mat-form-field>
-
-      <!-- {{User.name.value}} -->
       <a>{{username}}</a>
       <img src="../../../../../assets/images/account.png" class="acc-icon" alt="account image">
     </div>

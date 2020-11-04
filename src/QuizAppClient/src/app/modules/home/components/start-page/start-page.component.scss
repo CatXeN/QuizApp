@@ -3,7 +3,8 @@
   width: 100%;
   height: 100%;
   position: relative;
-  .topbar { 
+
+  .topbar {
     position: static;
     top: 0px;
     color: white;
@@ -12,7 +13,7 @@
     background-color: #57CBD2;
     display: flex;
     align-items: center;
-    box-shadow: 0px 8px 12px -8px rgba(0,0,0,0.75);
+    box-shadow: 0px 8px 12px -8px rgba(0, 0, 0, 0.75);
 
     .left {
       width: 5%;
@@ -21,14 +22,14 @@
       align-items: center;
 
       .home-btn {
-        margin-left:20px;
+        margin-left: 20px;
       }
 
       button {
         display: flex;
         justify-content: center;
         color: white;
-        
+
         text-align: center;
         height: 35px;
         margin: 5px;
