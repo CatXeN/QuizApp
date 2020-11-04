@@ -17,10 +17,6 @@ const routes: Routes = [
         path: 'auth',
         loadChildren: () => import('./modules/auth/auth.module').then(x => x.AuthModule)
       },
-      {
-        path: 'making',
-        loadChildren: () => import('./modules/make-quiz/make-quiz.module').then(x => x.MakeQuizModule)
-      }
     ]
   }
 

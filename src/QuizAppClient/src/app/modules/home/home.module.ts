@@ -14,7 +14,7 @@ import { ToolbarComponent } from 'src/app/shared/modules/toolbar/toolbar.compone
     CoreModule,
     HomeRoutingModule,
     MaterialModule, 
-    SharedModules
+    SharedModules,
   ],
   declarations: [StartPageComponent, QuizCardComponent]
 })

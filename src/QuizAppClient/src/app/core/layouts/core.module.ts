@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
   imports: [
     RouterModule,
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   exports: []
 })

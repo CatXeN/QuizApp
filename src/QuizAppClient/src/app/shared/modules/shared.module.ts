@@ -26,7 +26,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
         RouterModule,
         ReactiveFormsModule,
         MaterialModule,
-        FormsModule
+        FormsModule,
+        ToolbarComponent
     ],
     providers: [],
     bootstrap: []
