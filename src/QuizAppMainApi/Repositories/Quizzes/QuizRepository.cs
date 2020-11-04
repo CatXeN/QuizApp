@@ -21,12 +21,13 @@ namespace QuizAppMainApi.Repositories
             _mapper = mapper;
         }
 
-        public async Task AddQuiz(QuizInformation quizInformation)
+        public async Task<int> AddQuiz(QuizInformation quizInformation)
         {
             var quiz = _mapper.Map<Quiz>(quizInformation);
             await _context.Quizzes.AddAsync(quiz);
-
             await _context.SaveChangesAsync();
+
+            return quiz.QuizId;
         }
 
         public async Task<IEnumerable<QuizInformation>> GetQuizzes()

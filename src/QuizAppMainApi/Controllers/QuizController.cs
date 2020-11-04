@@ -30,8 +30,8 @@ namespace QuizAppMainApi.Controllers
             if (!result.IsValid)
                 return BadRequest(result.Errors);
                 
-            await _repository.AddQuiz(quizInformation);
-            return Ok();
+            var resultOfRepository = await _repository.AddQuiz(quizInformation);
+            return Ok(resultOfRepository);
         }
 
         [HttpGet]
