@@ -85,7 +85,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
       MatStepperModule,
       MatExpansionModule,
       MatMenuModule,
-      MatCardModule,    ]
+      MatCardModule,    
+    ]
   })
   export class MaterialModule { }
 
