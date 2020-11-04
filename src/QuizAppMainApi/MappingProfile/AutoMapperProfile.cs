@@ -15,6 +15,7 @@ namespace QuizAppMainApi.MappingProfile
             CreateMap<Category, CategoryInformation>().ReverseMap();
             CreateMap<Quiz, QuizInformation>().ReverseMap();
             CreateMap<Quest, QuestInformation>().ReverseMap();
+            CreateMap<User, UserInformation>().ReverseMap();
         }
     }
 }

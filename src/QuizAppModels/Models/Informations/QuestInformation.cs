@@ -14,6 +14,6 @@ namespace QuizAppModels.Models.Informations
         public int CorrectAnswer { get; set; }
         public string ImageUrl { get; set; }
         public int QuizId { get; set; }
-        public Quiz Quiz { get; set; }
+        public QuizInformation Quiz { get; set; }
     }
 }
