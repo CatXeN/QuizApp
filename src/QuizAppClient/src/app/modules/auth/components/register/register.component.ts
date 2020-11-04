@@ -1,6 +1,7 @@
 import { AuthService } from './../../service/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -19,14 +20,16 @@ export class RegisterComponent implements OnInit {
     role: new FormControl('USER')
   });
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {}
 
   register(): void {
     if (this.registerForm.value.password === this.registerForm.value.repeatPassword)
     {
-      this.authService.register(this.registerForm.value).subscribe();
+      this.authService.register(this.registerForm.value).subscribe(x => {
+        this.router.navigate(['/auth']);
+      });
     }
   }
 }

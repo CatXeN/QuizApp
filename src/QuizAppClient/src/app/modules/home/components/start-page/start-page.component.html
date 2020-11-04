@@ -1,10 +1,14 @@
 <div class="container">
   <div class="topbar">
     <div class="left">
-      <button mat-icon-button (click)='isOpened()' class="hamburger-btn">
-        <mat-icon>format_list_bulleted</mat-icon>
-      </button>
-      <app-hamburger *ngIf="!burger"></app-hamburger>
+      <h1>Logo</h1>
+      <button mat-button color="primary" class="home-btn">Home</button>
+      <button mat-button color="primary">JD</button>
+      <button mat-button class="newquiz-btn">Make quiz</button>
+      <button mat-button [matMenuTriggerFor]="afterMenu">Categories</button>
+      <mat-menu #afterMenu="matMenu" xPosition="after" class="categories-menu">
+        <button mat-menu-item *ngFor="let cat of categories">{{cat.name}}</button>
+      </mat-menu>
     </div>
     <div class="right">
       <mat-form-field appearance="outline">
@@ -12,10 +16,10 @@
         <input matInput placeholder="">
         <mat-icon matSuffix>search</mat-icon>
       </mat-form-field>
-      <button mat-stroked-button class="newquiz-btn">Make quiz</button>
-      <!-- {{User.name.value}} -->
-      <a>User1</a>
+      <a>{{username}}</a>
       <img src="../../../../../assets/images/account.png" class="acc-icon" alt="account image">
     </div>
   </div>
-</div>
+  <div class="content">
+    <app-quiz-card></app-quiz-card>
+  </div>

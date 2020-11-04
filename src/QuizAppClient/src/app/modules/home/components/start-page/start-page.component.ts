@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Category } from 'src/app/shared/Models/category.model';
+import { CategoryService } from '../../service/category.service';
+import { QuizCardComponent } from '../quiz-card/quiz-card.component';
 
 @Component({
   selector: 'app-start-page',
@@ -7,15 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartPageComponent implements OnInit {
 
-  public burger: boolean = false;
+  public burger: boolean = true;
+  public username: string;
+  categories: Category[];
 
-  constructor() { }
+  constructor(private categoryService: CategoryService) { }
 
   ngOnInit(): void {
-
+    this.username = localStorage.getItem('username');
+    this.getCategories();
   }
 
   isOpened(): void {
    this.burger = !this.burger;
+  }
+
+  getCategories(): void {
+    this.categoryService.getCategory().subscribe(x => {
+      this.categories = x;
+    });
   }
 }
