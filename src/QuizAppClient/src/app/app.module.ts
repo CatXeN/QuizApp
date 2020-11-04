@@ -9,6 +9,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthModule } from './modules/auth/auth.module';
 import { HomeModule } from './modules/home/home.module';
 import { HttpClientModule } from '@angular/common/http';
+import { MakeQuizModule } from './modules/make-quiz/make-quiz.module';
+import { SharedModules } from './shared/modules/shared.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { HttpClientModule } from '@angular/common/http';
     MaterialModule,
     BrowserAnimationsModule,
     AuthModule,
-    HttpClientModule
+    HttpClientModule,
+    MakeQuizModule,
+    SharedModules
 
   ],
   providers: [],

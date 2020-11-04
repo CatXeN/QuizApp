@@ -1,25 +1,4 @@
-<div class="container">
-  <div class="topbar">
-    <div class="left">
-      <h1>Logo</h1>
-      <button mat-button color="primary" class="home-btn">Home</button>
-      <button mat-button color="primary">JD</button>
-      <button mat-button class="newquiz-btn">Make quiz</button>
-      <button mat-button [matMenuTriggerFor]="afterMenu">Categories</button>
-      <mat-menu #afterMenu="matMenu" xPosition="after" class="categories-menu">
-        <button mat-menu-item *ngFor="let cat of categories">{{cat.name}}</button>
-      </mat-menu>
-    </div>
-    <div class="right">
-      <mat-form-field appearance="outline">
-        <mat-label></mat-label>
-        <input matInput placeholder="">
-        <mat-icon matSuffix>search</mat-icon>
-      </mat-form-field>
-      <a>{{username}}</a>
-      <img src="../../../../../assets/images/account.png" class="acc-icon" alt="account image">
-    </div>
-  </div>
+<app-toolbar></app-toolbar>
   <div class="content">
     <app-quiz-card></app-quiz-card>
   </div>
