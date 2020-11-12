@@ -28,7 +28,7 @@ export class RegisterComponent implements OnInit {
     if (this.registerForm.value.password === this.registerForm.value.repeatPassword)
     {
       this.authService.register(this.registerForm.value).subscribe(x => {
-        this.router.navigate(['/auth']);
+        this.router.navigate(['/']);
       });
     }
   }

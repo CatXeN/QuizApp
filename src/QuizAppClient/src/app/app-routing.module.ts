@@ -10,13 +10,14 @@ const routes: Routes = [
     component: MainLayoutComponent,
     children: [
       {
-        path: '',
+        path: 'main',
         loadChildren: () => import('./modules/home/home.module').then(x => x.HomeModule)
       },
       {
-        path: 'auth',
+        path: '',
         loadChildren: () => import('./modules/auth/auth.module').then(x => x.AuthModule)
-      }
+      },
+
     ]
   }
 

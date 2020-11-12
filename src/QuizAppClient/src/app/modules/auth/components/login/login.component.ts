@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
 
   login(): void{
     this.authService.login(this.loginForm.value).subscribe(x => {
-      this.router.navigate(['/']);
+      this.router.navigate(['/main']);
     });
   }
 }
