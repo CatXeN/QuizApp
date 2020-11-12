@@ -10,5 +10,9 @@ export const apiEndpoints = {
     },
     quiz: {
         getQuiz: `${environment.apiUrl}/api/Quiz `
+    },
+    quest: {
+        getSingleQuest: `${environment.apiUrl}/api/Quest/single/{0}`,
+        getQuest: `${environment.apiUrl}/api/Quest/{0}`
     }
 };

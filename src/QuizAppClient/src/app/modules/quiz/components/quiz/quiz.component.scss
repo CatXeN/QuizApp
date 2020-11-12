@@ -3,5 +3,15 @@
     height: 90vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+
+    button {
+        display: flex;
+        justify-content: center;
+        color: white;
+        background-color: #57CBD2;
+
+        text-align: center;
+        height: 35px;
+        margin: 5px;
+      }
 }

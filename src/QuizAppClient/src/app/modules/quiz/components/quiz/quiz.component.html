@@ -1,6 +1,12 @@
 <app-toolbar></app-toolbar>
 <div class="container">
-    <div class="content">
-
+    <div class="content" *ngFor="let item of quests">
+        <img src="{{item.imageUrl}}" width="250px" height="250px">
+        <p>{{item.description}}</p>
+        <button mat-raised-button>{{item.answerA}}</button>
+        <button mat-raised-button>{{item.answerB}}</button>
+        <button mat-raised-button>{{item.answerC}}</button>
+        <button mat-raised-button>{{item.answerD}}</button>
+        
     </div>
 </div>

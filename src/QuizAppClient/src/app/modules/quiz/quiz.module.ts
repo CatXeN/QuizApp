@@ -5,6 +5,7 @@ import { MaterialModule } from '../../shared/modules/material';
 import { SharedModules } from '../../shared/modules/shared.module'
 import { QuizRoutingModule } from './quiz-routing.module';
 import { QuizComponent } from './components/quiz/quiz.component';
+import 'src/app/core/extensions/string.formater';
 
 @NgModule({
   imports: [
