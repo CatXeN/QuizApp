@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthModule } from './modules/auth/auth.module';
 import { HomeModule } from './modules/home/home.module';
 import { HttpClientModule } from '@angular/common/http';
+import { SharedModules } from './shared/modules/shared.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     MaterialModule,
     BrowserAnimationsModule,
     AuthModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModules
 
   ],
   providers: [],

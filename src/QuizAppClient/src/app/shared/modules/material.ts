@@ -26,6 +26,7 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatCardModule} from '@angular/material/card';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @NgModule({
     imports: [
@@ -84,7 +85,7 @@ import {MatCardModule} from '@angular/material/card';
       MatStepperModule,
       MatExpansionModule,
       MatMenuModule,
-      MatCardModule
+      MatCardModule,    
     ]
   })
   export class MaterialModule { }

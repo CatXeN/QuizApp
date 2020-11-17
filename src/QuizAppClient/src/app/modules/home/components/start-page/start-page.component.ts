@@ -10,24 +10,7 @@ import { QuizCardComponent } from '../quiz-card/quiz-card.component';
 })
 export class StartPageComponent implements OnInit {
 
-  public burger: boolean = true;
-  public username: string;
-  categories: Category[];
-
-  constructor(private categoryService: CategoryService) { }
-
   ngOnInit(): void {
-    this.username = localStorage.getItem('username');
-    this.getCategories();
-  }
 
-  isOpened(): void {
-   this.burger = !this.burger;
-  }
-
-  getCategories(): void {
-    this.categoryService.getCategory().subscribe(x => {
-      this.categories = x;
-    });
   }
 }
