@@ -28,9 +28,16 @@ namespace QuizAppMain.Tests.Unit.ControllersTests
         {
             _repository.Setup(x => x.AddQuiz(It.IsAny<QuizInformation>()));
 
-            var result = await _controller.AddQuiz(new QuizInformation());
+            var result = await _controller.AddQuiz(new QuizInformation()
+            {
+                CategoryId = 1,
+                Description = "Xyz",
+                ImageUrl = "https://www.example.pl",
+                Name = "xyz",
+                UserId = 1
+            });
 
-            result.Should().BeOfType<OkResult>();
+            result.Should().BeOfType<OkObjectResult>();
         }
 
         [Fact]
@@ -38,7 +45,14 @@ namespace QuizAppMain.Tests.Unit.ControllersTests
         {
             _repository.Setup(x => x.AddQuiz(It.IsAny<QuizInformation>()));
 
-            await _controller.AddQuiz(new QuizInformation());
+            await _controller.AddQuiz(new QuizInformation()
+            {
+                CategoryId = 1,
+                Description = "Xyz",
+                ImageUrl = "https://www.example.pl",
+                Name = "xyz",
+                UserId = 1
+            });
 
            _repository.Verify(x => x.AddQuiz(It.IsAny<QuizInformation>()), Times.Once());
         }

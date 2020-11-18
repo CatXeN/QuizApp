@@ -28,7 +28,18 @@ namespace QuestAppMain.Tests.Unit.ControllersTests
         {
             _repository.Setup(x => x.AddQuest(It.IsAny<QuestInformation>()));
 
-            var result = await _controller.AddQuest(new QuestInformation());
+            var result = await _controller.AddQuest(new QuestInformation() 
+            { 
+                AnswerA = "xyz",
+                AnswerB = "xyz",
+                AnswerC = "xyz",
+                AnswerD = "xyz",
+                CorrectAnswer = 0,
+                Description = "xyz",
+                ImageUrl = "http://exmaplehttplink.pl",
+                QuizId = 1,
+                Time = 30
+            });
 
             result.Should().BeOfType<OkResult>();
         }
@@ -38,7 +49,18 @@ namespace QuestAppMain.Tests.Unit.ControllersTests
         {
             _repository.Setup(x => x.AddQuest(It.IsAny<QuestInformation>()));
 
-            await _controller.AddQuest(new QuestInformation());
+            await _controller.AddQuest(new QuestInformation()
+            {
+                AnswerA = "xyz",
+                AnswerB = "xyz",
+                AnswerC = "xyz",
+                AnswerD = "xyz",
+                CorrectAnswer = 0,
+                Description = "xyz",
+                ImageUrl = "http://exmaplehttplink.pl",
+                QuizId = 1,
+                Time = 30
+            });
 
             _repository.Verify(x => x.AddQuest(It.IsAny<QuestInformation>()), Times.Once());
         }
