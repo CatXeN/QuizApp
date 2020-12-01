@@ -14,7 +14,7 @@ using QuizAppModels.Models.Informations;
 using Xunit;
 using Xunit.Sdk;
 
-namespace QuizAppMain.Tests.Unit
+namespace QuizAppMain.Tests.Integration
 {
     public class CategoryTest
     {
@@ -22,7 +22,7 @@ namespace QuizAppMain.Tests.Unit
 
         public CategoryTest()
         {
-            var appFactory = new WebApplicationFactory<Startup>();
+            var appFactory = new CustomWebApplicationFactory<Startup>();
             _client = appFactory.CreateClient();
         }
         
@@ -40,19 +40,15 @@ namespace QuizAppMain.Tests.Unit
             var response = await _client.PostAsync("/api/category/", stringContent);
             
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-        }
 
-        [Fact]
-        public async Task GetAsync_Category_IsExist()
-        {
-            var response = await _client.GetAsync("/api/category/1");
-            response.EnsureSuccessStatusCode();
+            var responseToGetCategory = await _client.GetAsync("/api/category/1");
+            responseToGetCategory.EnsureSuccessStatusCode();
 
-            var stringResponse = await response.Content.ReadAsStringAsync();
-            var category = JsonConvert.DeserializeObject<CategoryInformation>(stringResponse);
+            var stringResponse = await responseToGetCategory.Content.ReadAsStringAsync();
+            var gotCattegory = JsonConvert.DeserializeObject<CategoryInformation>(stringResponse);
 
-            Assert.IsType<CategoryInformation>(category);
-            Assert.Equal(1, category.CategoryId);
+            Assert.IsType<CategoryInformation>(gotCattegory);
+            Assert.Equal(1, gotCattegory.CategoryId);
         }
     }
 }

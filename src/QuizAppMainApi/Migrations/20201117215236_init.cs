@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace QuizAppMainApi.Migrations
 {
-    public partial class InitDatabase : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,7 +12,7 @@ namespace QuizAppMainApi.Migrations
                 columns: table => new
                 {
                     CategoryId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -25,7 +25,7 @@ namespace QuizAppMainApi.Migrations
                 columns: table => new
                 {
                     UserId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("Sqlite:Autoincrement", true),
                     Username = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: true),
                     PasswordHash = table.Column<byte[]>(nullable: true),
@@ -42,7 +42,7 @@ namespace QuizAppMainApi.Migrations
                 columns: table => new
                 {
                     QuizId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
                     ImageUrl = table.Column<string>(nullable: true),
@@ -71,7 +71,7 @@ namespace QuizAppMainApi.Migrations
                 columns: table => new
                 {
                     QuestId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("Sqlite:Autoincrement", true),
                     Description = table.Column<string>(nullable: true),
                     Time = table.Column<int>(nullable: false),
                     AnswerA = table.Column<string>(nullable: true),

@@ -29,7 +29,7 @@ namespace QuizAppMain.Tests.Unit.ControllersTests
         {
             _repository.Setup(x => x.AddCategory(It.IsAny<CategoryInformation>()));
 
-            var result = await _controller.AddCategory(new CategoryInformation());
+            var result = await _controller.AddCategory(new CategoryInformation() { Name = "Example Name" });
 
             result.Should().BeOfType<OkResult>();
         }
@@ -39,7 +39,7 @@ namespace QuizAppMain.Tests.Unit.ControllersTests
         {
             _repository.Setup(x => x.AddCategory(It.IsAny<CategoryInformation>()));
 
-            await _controller.AddCategory(new CategoryInformation());
+            await _controller.AddCategory(new CategoryInformation() { Name = "Example Name"});
 
             _repository.Verify(x => x.AddCategory(It.IsAny<CategoryInformation>()), Times.Once);
         }
