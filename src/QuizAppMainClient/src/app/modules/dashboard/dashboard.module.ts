@@ -1,3 +1,4 @@
+import { DashboardCategoryComponent } from './presenter/dashboard-category/dashboard-category.component';
 import { DashboardHeaderComponent } from './presenter/dashboard-header/dashboard-header.component';
 import { CoreModule } from './../../core/core.module';
 import { DashboardContainerComponent } from './container/dashboard-container/dashboard-container.component';
@@ -13,6 +14,6 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
     SharedModule,
     DashboardRoutingModule
   ],
-  declarations: [DashboardContainerComponent, DashboardHeaderComponent]
+  declarations: [DashboardContainerComponent, DashboardHeaderComponent, DashboardCategoryComponent]
 })
 export class DashboardModule { }

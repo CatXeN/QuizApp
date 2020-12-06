@@ -1,0 +1,18 @@
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    .header {
+        width: 90%;
+        margin-right: 2px;
+    }
+    .text {
+        margin-bottom: 4px;
+    }
+    .line {
+       
+        width: 100%;
+        color: red;
+    }
+}
