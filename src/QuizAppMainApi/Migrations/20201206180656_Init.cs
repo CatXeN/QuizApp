@@ -1,9 +1,10 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace QuizAppMainApi.Migrations
 {
-    public partial class init : Migration
+    public partial class Init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,7 +13,7 @@ namespace QuizAppMainApi.Migrations
                 columns: table => new
                 {
                     CategoryId = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Name = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -25,7 +26,7 @@ namespace QuizAppMainApi.Migrations
                 columns: table => new
                 {
                     UserId = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Username = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: true),
                     PasswordHash = table.Column<byte[]>(nullable: true),
@@ -42,7 +43,7 @@ namespace QuizAppMainApi.Migrations
                 columns: table => new
                 {
                     QuizId = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
                     ImageUrl = table.Column<string>(nullable: true),
@@ -71,7 +72,7 @@ namespace QuizAppMainApi.Migrations
                 columns: table => new
                 {
                     QuestId = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Description = table.Column<string>(nullable: true),
                     Time = table.Column<int>(nullable: false),
                     AnswerA = table.Column<string>(nullable: true),
