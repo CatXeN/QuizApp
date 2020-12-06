@@ -3,14 +3,14 @@
 .container {
   display: flex;
   align-items: center;
-
   width: 100%;
   height: 60px;
   background-color: $aqua-blue;
 
   .left {
-      display: flex;
-      width: 10%;
+    display: flex;
+    width: 5%;
+
     .icon {
       margin-left: 5px;
       width: 50px;
@@ -19,24 +19,22 @@
   }
 
   .right {
-      width: 90%;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      margin-right: 10px;
+    width: 95%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 10px;
 
     .search {
-        width: 100%;
-        // height: 40px;
+      width: 100%;
     }
 
-      .action-btn {
-          background-color: $light-aqua;
-          margin-left: 10px;
-          width: 120px;
-          height: 40px;
-          border-radius: 15px;
-      }
-
+    .action-btn {
+      background-color: $light-aqua;
+      margin-left: 10px;
+      width: 120px;
+      height: 40px;
+      border-radius: 15px;
+    }
   }
 }
