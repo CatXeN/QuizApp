@@ -9,7 +9,7 @@ export class DashboardContainerComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }
