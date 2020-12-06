@@ -45,7 +45,7 @@ namespace QuizAppMainApi.Repositories.Quests
             await _context.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<QuestInformation>> GetTenQuests()
+        public async Task<IEnumerable<QuestInformation>> GetQuestsForCatergory()
         {
             var Quests = await _context.Quests.
                 OrderByDescending(x => x.QuestId).

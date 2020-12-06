@@ -10,6 +10,6 @@ namespace QuizAppMainApi.Repositories.Quests
         Task<IEnumerable<QuestInformation>> GetQuests(int quizId);
         Task<QuestInformation> GetQuest(int questId);
         Task AddQuest(QuestInformation questInformation);
-        Task<IEnumerable<QuestInformation>> GetTenQuests();
+        Task<IEnumerable<QuestInformation>> GetQuestsForCatergory();
     }
 }

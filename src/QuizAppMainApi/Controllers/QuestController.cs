@@ -44,10 +44,10 @@ namespace QuizAppMainApi.Controllers
             return Ok(quests);
         }
 
-        [HttpGet("getTenQuests")]
-        public async Task<IActionResult> GetTenQuests()
+        [HttpGet("getQuestsForCatergory")]
+        public async Task<IActionResult> GetQuestsForCatergory()
         {
-            var Quests = await _repository.GetTenQuests();
+            var Quests = await _repository.GetQuestsForCatergory();
             return Ok(Quests);
         }
     }
