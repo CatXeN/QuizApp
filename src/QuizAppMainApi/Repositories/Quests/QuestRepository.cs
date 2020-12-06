@@ -44,5 +44,14 @@ namespace QuizAppMainApi.Repositories.Quests
 
             await _context.SaveChangesAsync();
         }
+
+        public async Task<IEnumerable<QuestInformation>> GetTenQuests()
+        {
+            var Quests = await _context.Quests.
+                OrderByDescending(x => x.QuestId).
+                Take(10).
+                ToListAsync();
+            return _mapper.Map<IEnumerable<QuestInformation>>(Quests);
+        }
     }
 }
