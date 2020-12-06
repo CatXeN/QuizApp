@@ -12,5 +12,6 @@ namespace QuizAppMainApi.Repositories
         Task AddCategory(CategoryInformation categoryInformation);
         Task<IEnumerable<CategoryInformation>> GetCategories();
         Task<CategoryInformation> GetCategoryById(int id);
+        Task<IEnumerable<CategoryInformation>> GetTopCategories();
     }
 }
