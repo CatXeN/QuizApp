@@ -46,7 +46,7 @@ or 2 method
 ```
 
 ```
-$ cd src/QuizAppGameClient
+$ cd src/QuizAppGameApi
 $ dotnet ef database update
 $ dotnet run
 ```
