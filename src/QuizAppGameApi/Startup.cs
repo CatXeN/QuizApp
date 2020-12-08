@@ -33,7 +33,7 @@ namespace QuizAppGameApi
                 .AllowAnyMethod()
                 .AllowAnyHeader()
                 .AllowCredentials()
-                .WithOrigins("http://localhost:4200");
+                .WithOrigins("http://localhost:4201");
             }));
         }
 

@@ -11,5 +11,4 @@ export class GameDetailsContainerComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
