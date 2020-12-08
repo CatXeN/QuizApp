@@ -38,7 +38,9 @@ namespace QuizAppMain.Tests.Integration
             var stringContent = new StringContent(content, Encoding.UTF8, "application/json");
 
             var response = await _client.PostAsync("/api/category/", stringContent);
-            
+            var readedResponse = await response.Content.ReadAsStringAsync();
+            var gotGuid = JsonConvert.DeserializeObject<CategoryInformation>(readedResponse);
+
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
 
             var responseToGetCategory = await _client.GetAsync("/api/category/1");
@@ -48,7 +50,7 @@ namespace QuizAppMain.Tests.Integration
             var gotCattegory = JsonConvert.DeserializeObject<CategoryInformation>(stringResponse);
 
             Assert.IsType<CategoryInformation>(gotCattegory);
-            Assert.Equal(1, gotCattegory.CategoryId);
+            Assert.Equal(gotGuid.CategoryId, gotCattegory.CategoryId);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -20,7 +21,7 @@ namespace QuizAppMainApi.Repositories.Quests
             _mapper = mapper;
         }
         
-        public async Task<IEnumerable<QuestInformation>> GetQuests(int quizId)
+        public async Task<IEnumerable<QuestInformation>> GetQuests(Guid quizId)
         {
             var quests = await _context.Quests.
                 Include(x => x.Quiz).
@@ -29,7 +30,7 @@ namespace QuizAppMainApi.Repositories.Quests
             return _mapper.Map<IEnumerable<QuestInformation>>(quests);
         }
 
-        public async Task<QuestInformation> GetQuest(int questId)
+        public async Task<QuestInformation> GetQuest(Guid questId)
         {
             var quest = await _context.Quests.
                 Include(x => x.Quiz).

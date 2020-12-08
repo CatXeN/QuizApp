@@ -1,10 +1,11 @@
-﻿using QuizAppModels.Models.Entities;
+﻿using System;
+using QuizAppModels.Models.Entities;
 
 namespace QuizAppModels.Models.Informations
 {
     public class QuestInformation
     {
-        public int QuestId { get; set; }
+        public Guid QuestId { get; set; }
         public string Description { get; set; }
         public int Time { get; set; }
         public string AnswerA { get; set; }
@@ -13,7 +14,7 @@ namespace QuizAppModels.Models.Informations
         public string AnswerD { get; set; }
         public int CorrectAnswer { get; set; }
         public string ImageUrl { get; set; }
-        public int QuizId { get; set; }
+        public Guid QuizId { get; set; }
         public QuizInformation Quiz { get; set; }
     }
 }

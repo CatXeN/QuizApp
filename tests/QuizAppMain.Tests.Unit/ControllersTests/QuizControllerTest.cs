@@ -30,11 +30,11 @@ namespace QuizAppMain.Tests.Unit.ControllersTests
 
             var result = await _controller.AddQuiz(new QuizInformation()
             {
-                CategoryId = 1,
+                CategoryId = Guid.NewGuid(),
                 Description = "Xyz",
                 ImageUrl = "https://www.example.pl",
                 Name = "xyz",
-                UserId = 1
+                UserId = Guid.NewGuid()
             });
 
             result.Should().BeOfType<OkObjectResult>();
@@ -47,11 +47,11 @@ namespace QuizAppMain.Tests.Unit.ControllersTests
 
             await _controller.AddQuiz(new QuizInformation()
             {
-                CategoryId = 1,
+                CategoryId = Guid.NewGuid(),
                 Description = "Xyz",
                 ImageUrl = "https://www.example.pl",
                 Name = "xyz",
-                UserId = 1
+                UserId = Guid.NewGuid()
             });
 
            _repository.Verify(x => x.AddQuiz(It.IsAny<QuizInformation>()), Times.Once());
@@ -60,10 +60,10 @@ namespace QuizAppMain.Tests.Unit.ControllersTests
         [Fact]
         public async Task GetQuiz_ModelIsValid_ReturnObject()
         {
-            _repository.Setup(x => x.GetQuizById(It.IsAny<int>()))
-                .ReturnsAsync(new QuizInformation() { QuizId = 0});
+            _repository.Setup(x => x.GetQuizById(It.IsAny<Guid>()))
+                .ReturnsAsync(new QuizInformation() { QuizId = Guid.Empty});
 
-            var result = await _controller.GetQuizById(It.IsAny<int>());
+            var result = await _controller.GetQuizById(It.IsAny<Guid>());
 
             result.Should().BeOfType<OkObjectResult>();
         }
@@ -71,19 +71,19 @@ namespace QuizAppMain.Tests.Unit.ControllersTests
         [Fact]
         public async Task GetQuiz_ModelIsValid_RepositoryHasBeenCalled()
         {
-            _repository.Setup(x => x.GetQuizById(It.IsAny<int>()))
-                .ReturnsAsync(new QuizInformation() { QuizId = 0 });
+            _repository.Setup(x => x.GetQuizById(It.IsAny<Guid>()))
+                .ReturnsAsync(new QuizInformation() { QuizId = Guid.Empty});
 
-            await _controller.GetQuizById(It.IsAny<int>());
+            await _controller.GetQuizById(It.IsAny<Guid>());
 
-            _repository.Verify(x => x.GetQuizById(It.IsAny<int>()), Times.Once);
+            _repository.Verify(x => x.GetQuizById(It.IsAny<Guid>()), Times.Once);
         }
 
         [Fact]
         public async Task GetQuizzes_ModelIsValid_ReturnObject()
         {
             _repository.Setup(x => x.GetQuizzes())
-                .ReturnsAsync(new List<QuizInformation>() { new QuizInformation() { QuizId = 0 } });
+                .ReturnsAsync(new List<QuizInformation>() { new QuizInformation() { QuizId = Guid.Empty} });
 
             var result = await _controller.GetQuizzes();
 
@@ -94,7 +94,7 @@ namespace QuizAppMain.Tests.Unit.ControllersTests
         public async Task GetQuizzes_ModelIsValid_RepositoryHasBeenCalled()
         {
             _repository.Setup(x => x.GetQuizzes())
-                .ReturnsAsync(new List<QuizInformation>() { new QuizInformation() { QuizId = 0 } });
+                .ReturnsAsync(new List<QuizInformation>() { new QuizInformation() { QuizId = Guid.Empty} });
 
             await _controller.GetQuizzes();
 
