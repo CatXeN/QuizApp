@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace QuizAppMainApi.Migrations
 {
-    public partial class Init : Migration
+    public partial class InitDatabase : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,7 +12,8 @@ namespace QuizAppMainApi.Migrations
                 columns: table => new
                 {
                     CategoryId = table.Column<Guid>(nullable: false),
-                    Name = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(nullable: true),
+                    DoneQuizzess = table.Column<long>(nullable: false)
                 },
                 constraints: table =>
                 {

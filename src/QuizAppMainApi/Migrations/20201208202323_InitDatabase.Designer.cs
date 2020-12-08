@@ -10,8 +10,8 @@ using QuizAppMainApi.Data;
 namespace QuizAppMainApi.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20201208181856_Init")]
-    partial class Init
+    [Migration("20201208202323_InitDatabase")]
+    partial class InitDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,6 +26,9 @@ namespace QuizAppMainApi.Migrations
                     b.Property<Guid>("CategoryId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
+
+                    b.Property<long>("DoneQuizzess")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("Name")
                         .HasColumnType("text");
