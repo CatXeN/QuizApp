@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace QuizAppMainApi.Migrations
 {
@@ -11,12 +11,11 @@ namespace QuizAppMainApi.Migrations
                 name: "QuizHistories",
                 columns: table => new
                 {
-                    QuizHistoryId = table.Column<int>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    QuizId = table.Column<int>(nullable: false),
-                    UserId = table.Column<int>(nullable: false),
+                    QuizHistoryId = table.Column<Guid>(nullable: false),
+                    QuizId = table.Column<Guid>(nullable: false),
+                    UserId = table.Column<Guid>(nullable: false),
                     Score = table.Column<int>(nullable: false),
-                    DateTime = table.Column<int>(nullable: false)
+                    Date = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {

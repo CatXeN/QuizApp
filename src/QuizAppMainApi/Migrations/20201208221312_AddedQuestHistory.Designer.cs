@@ -10,7 +10,7 @@ using QuizAppMainApi.Data;
 namespace QuizAppMainApi.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20201208215725_AddedQuestHistory")]
+    [Migration("20201208221312_AddedQuestHistory")]
     partial class AddedQuestHistory
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -110,22 +110,21 @@ namespace QuizAppMainApi.Migrations
 
             modelBuilder.Entity("QuizAppModels.Models.Entities.QuizHistory", b =>
                 {
-                    b.Property<int>("QuizHistoryId")
+                    b.Property<Guid>("QuizHistoryId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                        .HasColumnType("uuid");
 
-                    b.Property<int>("DateTime")
-                        .HasColumnType("integer");
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("timestamp without time zone");
 
-                    b.Property<int>("QuizId")
-                        .HasColumnType("integer");
+                    b.Property<Guid>("QuizId")
+                        .HasColumnType("uuid");
 
                     b.Property<int>("Score")
                         .HasColumnType("integer");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("integer");
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
 
                     b.HasKey("QuizHistoryId");
 
