@@ -58,7 +58,7 @@ namespace QuizAppMainApi.Controllers
         [HttpGet("getQuizFromCategory/{categoryId}")]
         public async Task<IActionResult> getQuizFromCategory(int categoryId)
         {
-            var quizzes = await _repository.GetQuizFromCategory(categoryId);
+            var quizzes = await _repository.GetQuizzesFromCategory(categoryId);
             return Ok(quizzes);
         }
     }
