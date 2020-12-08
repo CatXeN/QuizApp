@@ -27,10 +27,10 @@ namespace QuizAppMainApi.Controllers
         [HttpPost]
         public async Task<IActionResult> AddCategory(CategoryInformation categoryInformation)
         {
-            var result = await _validator.ValidateAsync(categoryInformation);
+            var category = await _validator.ValidateAsync(categoryInformation);
 
-            if (!result.IsValid) 
-                return BadRequest(result.Errors);
+            if (!category.IsValid) 
+                return BadRequest(category.Errors);
 
             await _repository.AddCategory(categoryInformation);
             return Ok();
