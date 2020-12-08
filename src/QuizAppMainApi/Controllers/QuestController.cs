@@ -43,12 +43,5 @@ namespace QuizAppMainApi.Controllers
             var quests = await _repository.GetQuests(quizId);
             return Ok(quests);
         }
-
-        [HttpGet("getQuestsForCatergory/{id}")]
-        public async Task<IActionResult> GetQuestsForCatergory(int id)
-        {
-            var Quests = await _repository.GetQuestsForCatergory(id);
-            return Ok(Quests);
-        }
     }
 }
