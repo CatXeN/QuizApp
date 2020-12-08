@@ -8,7 +8,7 @@ namespace QuizAppMainApi.Repositories.Quests
 {
     public interface IQuestRepository
     {
-        Task<IEnumerable<QuestInformation>> GetQuestsByQuizId(Guid quizId);
+        Task<IEnumerable<QuestInformation>> GetQuestsById(Guid quizId);
         Task<QuestInformation> GetQuestById(Guid questId);
         Task AddQuest(QuestInformation questInformation);
     }
