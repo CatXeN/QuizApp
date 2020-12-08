@@ -26,9 +26,9 @@ namespace QuizAppMainApi.Controllers
         [HttpPost]
         public async Task<IActionResult> AddQuiz(QuizInformation quizInformation)
         {
-            var result = await _validator.ValidateAsync(quizInformation);
-            if (!result.IsValid)
-                return BadRequest(result.Errors);
+            var quiz = await _validator.ValidateAsync(quizInformation);
+            if (!quiz.IsValid)
+                return BadRequest(quiz.Errors);
                 
             var resultOfRepository = await _repository.AddQuiz(quizInformation);
             return Ok(resultOfRepository);
@@ -48,15 +48,8 @@ namespace QuizAppMainApi.Controllers
             return Ok(quiz);
         }
 
-        [HttpGet("twenty")]
-        public async Task<IActionResult> GetTwentyQuizzes()
-        {
-            var quizzes = await _repository.GetTwentyQuiz();
-            return Ok(quizzes);
-        }
-
-        [HttpGet("getQuizFromCategory/{categoryId}")]
-        public async Task<IActionResult> getQuizFromCategory(Guid categoryId)
+        [HttpGet("getQuizzesFromCategory/{categoryId}")]
+        public async Task<IActionResult> GetQuizzesFromCategory(Guid categoryId)
         {
             var quizzes = await _repository.GetQuizzesFromCategory(categoryId);
             return Ok(quizzes);

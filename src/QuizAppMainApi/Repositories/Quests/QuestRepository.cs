@@ -21,7 +21,7 @@ namespace QuizAppMainApi.Repositories.Quests
             _mapper = mapper;
         }
         
-        public async Task<IEnumerable<QuestInformation>> GetQuests(Guid quizId)
+        public async Task<IEnumerable<QuestInformation>> GetQuestsByQuizId(Guid quizId)
         {
             var quests = await _context.Quests.
                 Include(x => x.Quiz).
@@ -30,7 +30,7 @@ namespace QuizAppMainApi.Repositories.Quests
             return _mapper.Map<IEnumerable<QuestInformation>>(quests);
         }
 
-        public async Task<QuestInformation> GetQuest(Guid questId)
+        public async Task<QuestInformation> GetQuestById(Guid questId)
         {
             var quest = await _context.Quests.
                 Include(x => x.Quiz).
