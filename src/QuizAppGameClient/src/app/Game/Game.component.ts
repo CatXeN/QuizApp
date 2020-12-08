@@ -1,28 +1,23 @@
-import { SignalRService } from './service/SignalR.service';
+import { GameService } from './../Services/Game.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  // tslint:disable-next-line: component-selector
   selector: 'app-Game',
   templateUrl: './Game.component.html',
   styleUrls: ['./Game.component.scss']
 })
 export class GameComponent implements OnInit {
-  text = '';
+  signalList: string[] = [];
 
-  constructor(public signalRService: SignalRService) {
-
-  }
+  constructor(private gameService: GameService) { }
 
   ngOnInit(): void {
-    this.signalRService.connect();
-  }
-
-  sendMessage(): void {
-    this.signalRService.sendMessageToHub(this.text).subscribe({
-      next: _ => this.text = '',
-      error: (err) => console.error(err)
+    this.gameService.signalRecived.subscribe((signal: string) => {
+      this.signalList.push(signal);
     });
   }
 
+  buttoned() {
+    this.gameService.SendMessage('Jebać stare baby prądem');
+  }
 }

@@ -4,14 +4,14 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:63764",
-      "sslPort": 44301
+      "applicationUrl": "http://localhost:54614",
+      "sslPort": 0
     }
   },
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
-      "launchBrowser": false,
+      "launchBrowser": true,
       "launchUrl": "weatherforecast",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
@@ -19,9 +19,9 @@
     },
     "QuizAppGameApi": {
       "commandName": "Project",
-      "launchBrowser": false,
+      "launchBrowser": true,
       "launchUrl": "weatherforecast",
-      "applicationUrl": "https://localhost:5001;http://localhost:5000",
+      "applicationUrl": "http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

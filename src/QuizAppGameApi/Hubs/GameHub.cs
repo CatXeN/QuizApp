@@ -6,15 +6,11 @@ using System.Threading.Tasks;
 
 namespace QuizAppGameApi.Hubs
 {
-    public class GameHub : Hub<IGameHub>
+    public class GameHub : Hub
     {
-        public async Task BroadcastAsync(string message)
+        public async Task SendMessage(string message)
         {
-            await Clients.All.MessageReceivedFromHub(message);
-        }
-        public override async Task OnConnectedAsync()
-        {
-            await Clients.All.NewUserConnected("a new user connectd");
+            await Clients.All.SendAsync("ReceiveMessage", message);
         }
     }
 }

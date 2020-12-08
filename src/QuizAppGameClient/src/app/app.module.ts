@@ -5,9 +5,9 @@ import { AppComponent } from './app.component';
 import { GameComponent } from './Game/Game.component';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
-    GameComponent
+      GameComponent
    ],
   imports: [
     BrowserModule

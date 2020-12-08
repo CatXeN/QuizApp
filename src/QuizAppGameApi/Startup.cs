@@ -1,9 +1,15 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using QuizAppGameApi.Hubs;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace QuizAppGameApi
 {
@@ -20,21 +26,15 @@ namespace QuizAppGameApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSignalR().AddMessagePackProtocol();
-
-            services.AddCors(options =>
+            services.AddSignalR();
+            services.AddCors(x => x.AddPolicy("GamePolicy", builder =>
             {
-                options.AddDefaultPolicy(builder =>
-                {
-                    builder
-                        .WithOrigins(
-                        "http://localhost")
-                        .AllowCredentials()
-                        .AllowAnyHeader()
-                        .SetIsOriginAllowed(_ => true)
-                        .AllowAnyMethod();
-                });
-            });
+                builder
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials()
+                .WithOrigins("http://localhost:4200");
+            }));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,12 +44,8 @@ namespace QuizAppGameApi
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.UseHttpsRedirection();
-
+            app.UseCors("GamePolicy");
             app.UseRouting();
-
-            app.UseCors("CorsPolicy");
 
             app.UseAuthorization();
 
