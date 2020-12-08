@@ -47,13 +47,13 @@ namespace QuizAppMainApi.Repositories.Quests
 
         public async Task<IEnumerable<QuestInformation>> GetQuestsForCatergory(int id)
         {
-            var Quests = await _context.Quests.
+            var quests = await _context.Quests.
                 OrderByDescending(x => id).
                 Take(10).
                 ToListAsync();
+
             
-            
-            return _mapper.Map<IEnumerable<QuestInformation>>(Quests);
+            return _mapper.Map<IEnumerable<QuestInformation>>(quests);
 
 
             /*var Quests = await _context.Quests.

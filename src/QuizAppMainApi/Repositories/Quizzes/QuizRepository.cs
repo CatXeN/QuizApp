@@ -58,5 +58,15 @@ namespace QuizAppMainApi.Repositories
                 ToListAsync();
             return _mapper.Map<IEnumerable<QuizInformation>>(quizzes);
         }
+
+        public async Task<IEnumerable<QuizInformation>> GetQuizFromCategory(int id)
+        {
+            var quiz = await _context.Quizzes.
+                Where(x => x.CategoryId == id).
+                Take(10).
+                ToListAsync();
+
+            return _mapper.Map<IEnumerable<QuizInformation>>(quiz);
+        }
     }
 }
