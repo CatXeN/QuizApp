@@ -30,9 +30,9 @@ $ ng serve
 
 2. Back-end
 
+```
 1 method
 
-```
 $ cd src/QuizAppMainApi
 $ dotnet ef database update
 $ dotnet run
