@@ -15,5 +15,6 @@ namespace QuizAppMainApi.Data
         public DbSet<Quest> Quests { get; set; }
         public DbSet<Quiz> Quizzes{ get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<QuizHistory> QuizHistories { get; set; }
     }
 }
