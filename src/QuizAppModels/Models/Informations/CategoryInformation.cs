@@ -8,5 +8,6 @@ namespace QuizAppModels.Models.Informations
     {
         public int CategoryId { get; set; }
         public string Name { get; set; }
+        public long DoneQuizzess { get; set; }
     }
 }

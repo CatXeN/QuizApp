@@ -54,5 +54,12 @@ namespace QuizAppMainApi.Controllers
             var quizzes = await _repository.GetTwentyQuiz();
             return Ok(quizzes);
         }
+
+        [HttpGet("getQuizFromCategory/{categoryId}")]
+        public async Task<IActionResult> getQuizFromCategory(int categoryId)
+        {
+            var quizzes = await _repository.GetQuizzesFromCategory(categoryId);
+            return Ok(quizzes);
+        }
     }
 }
