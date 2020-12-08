@@ -13,6 +13,6 @@ namespace QuizAppMainApi.Repositories
         Task<IEnumerable<QuizInformation>> GetQuizzes();
         Task<QuizInformation> GetQuizById(Guid id);
         Task<IEnumerable<QuizInformation>> GetTwentyQuiz();
-        Task<IEnumerable<QuizInformation>> GetQuizzesFromCategory(int categoryId);
+        Task<IEnumerable<QuizInformation>> GetQuizzesFromCategory(Guid categoryId);
     }
 }
