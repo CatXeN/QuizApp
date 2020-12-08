@@ -12,5 +12,6 @@ namespace QuizAppModels.Models.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid CategoryId{ get; set; }
         public string Name { get; set; }
+        public long  DoneQuizzess { get; set; }
     }
 }

@@ -49,5 +49,12 @@ namespace QuizAppMainApi.Controllers
             var category = await _repository.GetCategoryById(id);
             return Ok(category);
         }
+
+        [HttpGet("topCategories")]
+        public async Task<IActionResult> GetTopCategories()
+        {
+            var categories = await _repository.GetTopCategories();
+            return Ok(categories);
+        }
     }
 }
