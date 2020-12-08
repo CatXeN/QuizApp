@@ -21,7 +21,7 @@ namespace QuizAppMainApi.Repositories.Quests
             _mapper = mapper;
         }
         
-        public async Task<IEnumerable<QuestInformation>> GetQuestsByQuizId(Guid quizId)
+        public async Task<IEnumerable<QuestInformation>> GetQuestsById(Guid quizId)
         {
             var quests = await _context.Quests.
                 Include(x => x.Quiz).
