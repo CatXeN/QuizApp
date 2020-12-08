@@ -108,21 +108,22 @@ namespace QuizAppMainApi.Migrations
 
             modelBuilder.Entity("QuizAppModels.Models.Entities.QuizHistory", b =>
                 {
-                    b.Property<Guid>("QuizHistoryId")
+                    b.Property<int>("QuizHistoryId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<Guid>("Date")
-                        .HasColumnType("uuid");
+                    b.Property<int>("DateTime")
+                        .HasColumnType("integer");
 
-                    b.Property<Guid>("QuizId")
-                        .HasColumnType("uuid");
+                    b.Property<int>("QuizId")
+                        .HasColumnType("integer");
 
-                    b.Property<Guid>("Score")
-                        .HasColumnType("uuid");
+                    b.Property<int>("Score")
+                        .HasColumnType("integer");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
 
                     b.HasKey("QuizHistoryId");
 
