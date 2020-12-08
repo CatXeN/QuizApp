@@ -1,22 +1,15 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using QuizAppMainApi.Data;
 using QuizAppMainApi.Repositories;
-using QuizAppMainApi.Repositories.Auth;
 using QuizAppMainApi.Repositories.Quests;
-using QuizAppMainApi.Services;
 using QuizAppModels.Config;
 
 namespace QuizAppMainApi
@@ -38,10 +31,7 @@ namespace QuizAppMainApi
             services.AddDbContext<DataContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<ICategoryRepository, CategoryRepository>();
             services.AddTransient<IQuizRepository, QuizRepository>();
-            services.AddTransient<IAuthRepository, AuthRepository>();
-            services.AddTransient<IAuthService, AuthService>();
             services.AddTransient<IQuestRepository, QuestRepository>();
-            services.Configure<AuthConfig>(options => Configuration.GetSection("Auth").Bind(options));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "QuizAppMainApi", Version = "v1" });

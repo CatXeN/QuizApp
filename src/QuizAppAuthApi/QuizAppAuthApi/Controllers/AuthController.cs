@@ -5,13 +5,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using QuizAppMainApi.Repositories.Auth;
-using QuizAppMainApi.Services;
-using QuizAppModels.Models.Entities;
-using QuizAppModels.Models.Informations;
-using QuizAppModels.Models.Validators;
+using QuizAppAuthApi.Models.Entities;
+using QuizAppAuthApi.Models.Informations;
+using QuizAppAuthApi.Models.Validators;
+using QuizAppAuthApi.Repository.Auth;
+using QuizAppAuthApi.Service.Auth;
 
-namespace QuizAppMainApi.Controllers
+namespace QuizAppAuthApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

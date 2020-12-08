@@ -1,15 +1,10 @@
-﻿using Microsoft.AspNetCore.Authentication;
-using Microsoft.EntityFrameworkCore;
-using QuizAppMainApi.Data;
-using QuizAppModels.Models.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
+﻿using Microsoft.EntityFrameworkCore;
 using System.Text;
 using System.Threading.Tasks;
+using QuizAppAuthApi.Data;
+using QuizAppAuthApi.Models.Entities;
 
-namespace QuizAppMainApi.Repositories.Auth
+namespace QuizAppAuthApi.Repository.Auth
 {
     public class AuthRepository : IAuthRepository
     {
@@ -57,7 +52,7 @@ namespace QuizAppMainApi.Repositories.Auth
 
         private void CreatePasswordHashSalt(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
-            using(var hmac = new System.Security.Cryptography.HMACSHA512())
+            using (var hmac = new System.Security.Cryptography.HMACSHA512())
             {
                 passwordSalt = hmac.Key;
                 passwordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
