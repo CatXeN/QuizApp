@@ -18,6 +18,6 @@ export class GameComponent implements OnInit {
   }
 
   buttoned() {
-    this.gameService.SendMessage('Jebać stare baby prądem');
+    this.gameService.SendMessage('Works!');
   }
 }
