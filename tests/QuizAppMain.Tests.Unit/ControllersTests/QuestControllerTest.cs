@@ -68,10 +68,10 @@ namespace QuestAppMain.Tests.Unit.ControllersTests
         [Fact]
         public async Task GetQuest_ModelIsValid_ReturnObjectResult()
         {
-            _repository.Setup(x => x.GetQuest(It.IsAny<Guid>()))
+            _repository.Setup(x => x.GetQuestById(It.IsAny<Guid>()))
                 .ReturnsAsync(new QuestInformation() { QuestId = Guid.Empty});
 
-            var result = await _controller.GetQuest(It.IsAny<Guid>());
+            var result = await _controller.GetQuestById(It.IsAny<Guid>());
 
             result.Should().BeOfType<OkObjectResult>();
         }
@@ -79,21 +79,21 @@ namespace QuestAppMain.Tests.Unit.ControllersTests
         [Fact]
         public async Task GetQuest_ModelIsValid_RepositoryHasBeenCalled()
         {
-            _repository.Setup(x => x.GetQuest(It.IsAny<Guid>()))
+            _repository.Setup(x => x.GetQuestById(It.IsAny<Guid>()))
                 .ReturnsAsync(new QuestInformation() { QuizId = Guid.Empty});
 
-            await _controller.GetQuest(It.IsAny<Guid>());
+            await _controller.GetQuestById(It.IsAny<Guid>());
 
-            _repository.Verify(x => x.GetQuest(It.IsAny<Guid>()), Times.Once);
+            _repository.Verify(x => x.GetQuestById(It.IsAny<Guid>()), Times.Once);
         }
 
         [Fact]
         public async Task GetQuests_ModelIsValid_ReturnObjectResult()
         {
-            _repository.Setup(x => x.GetQuests(It.IsAny<Guid>()))
+            _repository.Setup(x => x.GetQuestsById(It.IsAny<Guid>()))
                 .ReturnsAsync(new List<QuestInformation>() {new QuestInformation() { QuestId = Guid.Empty} });
 
-            var result = await _controller.GetQuests(It.IsAny<Guid>());
+            var result = await _controller.GetQuestsById(It.IsAny<Guid>());
 
             result.Should().BeOfType<OkObjectResult>();
         }
@@ -101,12 +101,12 @@ namespace QuestAppMain.Tests.Unit.ControllersTests
         [Fact]
         public async Task GetQuests_ModelIsValid_RepositoryHasBeenCalled()
         {
-            _repository.Setup(x => x.GetQuests(It.IsAny<Guid>()))
+            _repository.Setup(x => x.GetQuestsById(It.IsAny<Guid>()))
                 .ReturnsAsync(new List<QuestInformation>() { new QuestInformation() { QuestId = Guid.Empty} });
 
-            await _controller.GetQuests(It.IsAny<Guid>());
+            await _controller.GetQuestsById(It.IsAny<Guid>());
 
-            _repository.Verify(x => x.GetQuests(It.IsAny<Guid>()), Times.Once);
+            _repository.Verify(x => x.GetQuestsById(It.IsAny<Guid>()), Times.Once);
         }
     }
 }

@@ -1,19 +1,14 @@
-﻿using Microsoft.AspNetCore.Server.HttpSys;
-using Microsoft.EntityFrameworkCore.Query.Internal;
-using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using QuizAppMainApi.Repositories.Auth;
-using QuizAppModels.Config;
 using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Runtime.InteropServices;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using QuizAppAuthApi.Config;
+using QuizAppAuthApi.Repository.Auth;
 
-namespace QuizAppMainApi.Services
+namespace QuizAppAuthApi.Service.Auth
 {
     public class AuthService : IAuthService
     {
@@ -26,7 +21,7 @@ namespace QuizAppMainApi.Services
             _authConfig = authConfig.Value;
         }
 
-        public async Task<Object> GetToken(string username, string password)
+        public async Task<object> GetToken(string username, string password)
         {
             var userRepository = await _repository.Login(username.ToLower(), password);
 

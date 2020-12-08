@@ -1,7 +1,7 @@
-using FluentValidation;
-using QuizAppModels.Models.Informations;
+﻿using FluentValidation;
+using QuizAppAuthApi.Models.Informations;
 
-namespace QuizAppModels.Models.Validators
+namespace QuizAppAuthApi.Models.Validators
 {
     public class UserValidator : AbstractValidator<UserInformation>
     {

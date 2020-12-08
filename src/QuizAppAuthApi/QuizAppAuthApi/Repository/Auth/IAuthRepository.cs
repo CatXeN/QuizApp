@@ -1,10 +1,10 @@
-﻿using QuizAppModels.Models.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using QuizAppAuthApi.Models.Entities;
 
-namespace QuizAppMainApi.Repositories.Auth
+namespace QuizAppAuthApi.Repository.Auth
 {
     public interface IAuthRepository
     {
