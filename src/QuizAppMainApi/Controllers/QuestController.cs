@@ -38,10 +38,10 @@ namespace QuizAppMainApi.Controllers
             return Ok(quest);
         }
 
-        [HttpGet("getQuestsByQuizId/{quizId}")]
-        public async Task<IActionResult> GetQuestsByQuizId(Guid quizId)
+        [HttpGet("getQuestsById/{quizId}")]
+        public async Task<IActionResult> GetQuestsById(Guid quizId)
         {
-            var quests = await _repository.GetQuestsByQuizId(quizId);
+            var quests = await _repository.GetQuestsById(quizId);
             return Ok(quests);
         }
     }
