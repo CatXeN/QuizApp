@@ -1,7 +1,26 @@
-<div class="container" *ngFor="let item of category">
-<div class="header">
-<h2 class="text">{{item.name}}</h2>
-<hr class="line">
-</div>
-
+<div class="main-container">
+  <div class="container">
+    <div class="categories">
+      <div class="header">
+        <h2 class="text">Najpopularniejsze</h2>
+        <hr class="line">
+      </div>
+      <div class="category-container" *ngFor="let item of quizes">
+          <app-dashboard-card></app-dashboard-card>
+      </div>
+    </div>
+<!-- 
+    <div class="container" *ngFor="let item of category">
+      <div class="categories">
+        <div class="header">
+          <h2 class="text">{{item.name}}</h2>
+          <hr class="line">
+        </div>
+        <div class="category-container">
+          <app-dashboard-card></app-dashboard-card>
+          <app-dashboard-card></app-dashboard-card>
+          <app-dashboard-card></app-dashboard-card>
+        </div>
+      </div>
+    </div> -->
 </div>

@@ -3,6 +3,6 @@
     padding: 0;
     margin: 0;
 }
-.mat-input-element {
-    border-color: none;
+.mat-form-field-appearance-outline .mat-form-field-outline-end, .mat-form-field-appearance-outline .mat-form-field-outline-start {
+    border: none !important;
 }

@@ -1,3 +1,4 @@
+import { Quiz } from './../../../shared/models/quiz.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -13,6 +14,10 @@ constructor(private http: HttpClient) { }
 
 getCategories(): Observable<Category[]> {
   return this.http.get<Category[]>(apiEndpoints.Category.getCategoryList);
+}
+
+getTop20(): Observable<Quiz[]> {
+  return this.http.get<Quiz[]>(apiEndpoints.Quiz.getTopQuizes);
 }
 
 }

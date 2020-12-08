@@ -1,0 +1,30 @@
+.card-container {
+    width: 350px;
+    height: 300px;
+    border-radius: 20px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    .image-container {
+        display: flex;
+            justify-content: center;
+        .quiz-img {
+            
+            width: 90%;
+            height: 150px;
+        }
+    }
+    .header {
+        margin-top: 10px;
+        font-weight: 500;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+    }
+    .infos {
+        width: 100%;
+        margin-left: 10px;
+        height: 30%;
+        display: flex;
+        align-items: flex-end;
+        
+    }
+}

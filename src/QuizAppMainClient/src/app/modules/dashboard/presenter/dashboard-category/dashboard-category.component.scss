@@ -2,17 +2,43 @@
     width: 100%;
     display: flex;
     justify-content: flex-end;
-
-    .header {
-        width: 90%;
-        margin-right: 2px;
-    }
-    .text {
-        margin-bottom: 4px;
-    }
-    .line {
-       
+    .main-container {
         width: 100%;
-        color: red;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
     }
+    .categories {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+
+        .header {
+            width: 90%;
+            margin-right: 2px;
+        }
+        .text {
+            margin-bottom: 4px;
+        }
+        .line {
+            width: 100%;
+        }
+    
+        .category-container {
+            display: flex;
+            justify-content: start;
+            align-items: flex-start;      
+            
+            app-dashboard-card {
+                margin-right: 10px;
+                
+            }
+        }
+    }
+
 }
