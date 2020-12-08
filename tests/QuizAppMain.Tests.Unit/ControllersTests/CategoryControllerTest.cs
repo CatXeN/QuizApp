@@ -47,10 +47,10 @@ namespace QuizAppMain.Tests.Unit.ControllersTests
         [Fact]
         public async Task GetCategory_ModelIsValid_ReturnObject()
         {
-            _repository.Setup(x => x.GetCategoryById(It.IsAny<int>()))
-                .ReturnsAsync(new CategoryInformation() {CategoryId = 0});
+            _repository.Setup(x => x.GetCategoryById(It.IsAny<Guid>()))
+                .ReturnsAsync(new CategoryInformation() {CategoryId = Guid.Empty});
 
-            var result = await _controller.GetCategoryById(It.IsAny<int>());
+            var result = await _controller.GetCategoryById(It.IsAny<Guid>());
 
             result.Should().BeOfType<OkObjectResult>();
         }
@@ -58,19 +58,19 @@ namespace QuizAppMain.Tests.Unit.ControllersTests
         [Fact]
         public async Task GetCategory_ModelIsValid_RepositoryHasBeenCalled()
         {
-            _repository.Setup(x => x.GetCategoryById(It.IsAny<int>()))
-                .ReturnsAsync(new CategoryInformation() { CategoryId = 0 });
+            _repository.Setup(x => x.GetCategoryById(It.IsAny<Guid>()))
+                .ReturnsAsync(new CategoryInformation() { CategoryId = Guid.Empty});
 
-            await _controller.GetCategoryById(It.IsAny<int>());
+            await _controller.GetCategoryById(It.IsAny<Guid>());
 
-            _repository.Verify(x => x.GetCategoryById(It.IsAny<int>()), Times.Once);
+            _repository.Verify(x => x.GetCategoryById(It.IsAny<Guid>()), Times.Once);
         }
 
         [Fact]
         public async Task GetCategories_ModelIsValid_ReturnObject()
         {
             _repository.Setup(x => x.GetCategories())
-                .ReturnsAsync(new List<CategoryInformation>() { new CategoryInformation(){ CategoryId = 0 }});
+                .ReturnsAsync(new List<CategoryInformation>() { new CategoryInformation(){ CategoryId = Guid.Empty} });
 
             var result = await _controller.GetCategories();
 
@@ -81,7 +81,7 @@ namespace QuizAppMain.Tests.Unit.ControllersTests
         public async Task GetCategories_ModelIsValid_RepositoryHasBeenCalled()
         {
             _repository.Setup(x => x.GetCategories())
-                .ReturnsAsync(new List<CategoryInformation>() { new CategoryInformation() { CategoryId = 0 } });
+                .ReturnsAsync(new List<CategoryInformation>() { new CategoryInformation() { CategoryId = Guid.Empty} });
 
             await _controller.GetCategories();
 

@@ -9,9 +9,9 @@ namespace QuizAppMainApi.Repositories
 {
     public interface IQuizRepository 
     {
-        Task<int> AddQuiz(QuizInformation quizInformation);
+        Task<Guid> AddQuiz(QuizInformation quizInformation);
         Task<IEnumerable<QuizInformation>> GetQuizzes();
-        Task<QuizInformation> GetQuizById(int id);
+        Task<QuizInformation> GetQuizById(Guid id);
         Task<IEnumerable<QuizInformation>> GetTwentyQuiz();
     }
 }

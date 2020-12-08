@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿using System;
+using FluentValidation;
 using QuizAppModels.Models.Informations;
 
 namespace QuizAppModels.Models.Validators
@@ -22,7 +23,7 @@ namespace QuizAppModels.Models.Validators
             RuleFor(x => x.CorrectAnswer)
                 .GreaterThanOrEqualTo(0);
             RuleFor(x => x.QuizId)
-                .GreaterThan(0).WithMessage("Contact with administration");
+                .NotEqual(Guid.Empty).WithMessage("Contact with administration");
         }
     }
 }

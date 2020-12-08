@@ -1,6 +1,5 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace QuizAppMainApi.Migrations
 {
@@ -12,8 +11,7 @@ namespace QuizAppMainApi.Migrations
                 name: "Categories",
                 columns: table => new
                 {
-                    CategoryId = table.Column<int>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    CategoryId = table.Column<Guid>(nullable: false),
                     Name = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -25,8 +23,7 @@ namespace QuizAppMainApi.Migrations
                 name: "Users",
                 columns: table => new
                 {
-                    UserId = table.Column<int>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    UserId = table.Column<Guid>(nullable: false),
                     Username = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: true),
                     PasswordHash = table.Column<byte[]>(nullable: true),
@@ -42,13 +39,12 @@ namespace QuizAppMainApi.Migrations
                 name: "Quizzes",
                 columns: table => new
                 {
-                    QuizId = table.Column<int>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    QuizId = table.Column<Guid>(nullable: false),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
                     ImageUrl = table.Column<string>(nullable: true),
-                    UserId = table.Column<int>(nullable: false),
-                    CategoryId = table.Column<int>(nullable: false)
+                    UserId = table.Column<Guid>(nullable: false),
+                    CategoryId = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -71,8 +67,7 @@ namespace QuizAppMainApi.Migrations
                 name: "Quests",
                 columns: table => new
                 {
-                    QuestId = table.Column<int>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    QuestId = table.Column<Guid>(nullable: false),
                     Description = table.Column<string>(nullable: true),
                     Time = table.Column<int>(nullable: false),
                     AnswerA = table.Column<string>(nullable: true),
@@ -81,7 +76,7 @@ namespace QuizAppMainApi.Migrations
                     AnswerD = table.Column<string>(nullable: true),
                     CorrectAnswer = table.Column<int>(nullable: false),
                     ImageUrl = table.Column<string>(nullable: true),
-                    QuizId = table.Column<int>(nullable: false)
+                    QuizId = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
                 {
