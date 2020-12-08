@@ -32,13 +32,11 @@ export class GameService {
         setTimeout(() => {
           this.startConnection();
         }, 3000);
-      })
+      });
   }
-
 
   private registerSignalEvents(): void {
     this.hubConnection.on('ReceiveMessage', (data: string) => {
-        console.log(data);
         this.signalRecived.emit(data);
     });
   }
