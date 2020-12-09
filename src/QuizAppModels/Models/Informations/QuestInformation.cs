@@ -1,5 +1,4 @@
 ﻿using System;
-using QuizAppModels.Models.Entities;
 
 namespace QuizAppModels.Models.Informations
 {

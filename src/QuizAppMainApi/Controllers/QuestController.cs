@@ -1,9 +1,9 @@
-﻿using System;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using QuizAppMainApi.Repositories.Quests;
 using QuizAppModels.Models.Informations;
 using QuizAppModels.Models.Validators;
+using System;
+using System.Threading.Tasks;
 
 namespace QuizAppMainApi.Controllers
 {

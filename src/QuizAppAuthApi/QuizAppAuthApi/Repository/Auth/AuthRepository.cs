@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System.Text;
-using System.Threading.Tasks;
 using QuizAppAuthApi.Data;
 using QuizAppAuthApi.Models.Entities;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace QuizAppAuthApi.Repository.Auth
 {
