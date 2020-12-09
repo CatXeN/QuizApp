@@ -2,18 +2,16 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using QuizAppMainApi.Data;
+using QuizAppAdminApi.Data;
 
-namespace QuizAppMainApi.Migrations
+namespace QuizAppAdminApi.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20201208202323_InitDatabase")]
-    partial class InitDatabase
+    partial class DataContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -106,6 +104,29 @@ namespace QuizAppMainApi.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Quizzes");
+                });
+
+            modelBuilder.Entity("QuizAppModels.Models.Entities.QuizHistory", b =>
+                {
+                    b.Property<Guid>("QuizHistoryId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<Guid>("QuizId")
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("Score")
+                        .HasColumnType("integer");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("QuizHistoryId");
+
+                    b.ToTable("QuizHistories");
                 });
 
             modelBuilder.Entity("QuizAppModels.Models.Entities.User", b =>

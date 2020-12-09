@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuizAppAdminApi", "QuizAppAdminApi\QuizAppAdminApi.csproj", "{3130B425-F37B-40B6-AC00-C2D5A9E5D3A6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6F1708F1-B1BC-4D0B-8CC2-DB3490672F76}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuizAppModels", "..\QuizAppModels\QuizAppModels.csproj", "{F0A4EABA-47C3-4CD6-8FAB-6DABB9A2EE83}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3130B425-F37B-40B6-AC00-C2D5A9E5D3A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3130B425-F37B-40B6-AC00-C2D5A9E5D3A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3130B425-F37B-40B6-AC00-C2D5A9E5D3A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3130B425-F37B-40B6-AC00-C2D5A9E5D3A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0A4EABA-47C3-4CD6-8FAB-6DABB9A2EE83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0A4EABA-47C3-4CD6-8FAB-6DABB9A2EE83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0A4EABA-47C3-4CD6-8FAB-6DABB9A2EE83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0A4EABA-47C3-4CD6-8FAB-6DABB9A2EE83}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3130B425-F37B-40B6-AC00-C2D5A9E5D3A6} = {6F1708F1-B1BC-4D0B-8CC2-DB3490672F76}
+		{F0A4EABA-47C3-4CD6-8FAB-6DABB9A2EE83} = {6F1708F1-B1BC-4D0B-8CC2-DB3490672F76}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B78DEC1E-20EA-4EDD-888F-E5FA03B3E6BE}
+	EndGlobalSection
+EndGlobal

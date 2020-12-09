@@ -1,19 +1,19 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using QuizAppAdminApi.Data;
+using QuizAppAdminApi.Repositories.Categories;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
-using Microsoft.EntityFrameworkCore;
-using QuizzAppAdminApi.Data;
+using QuizAppAdminApi.Repositories.Quests;
+using QuizAppAdminApi.Repositories.QuizHistories;
+using QuizAppAdminApi.Repositories.Quizzes;
+using QuizAppAdminApi.Repositories.Users;
 
-namespace QuizzAppAdminApi
+namespace QuizAppAdminApi
 {
     public class Startup
     {
@@ -30,6 +30,11 @@ namespace QuizzAppAdminApi
             services.AddControllers();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddDbContext<DataContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<IQuizRepository, QuizRepository>();
+            services.AddTransient<IQuestRepository, QuestRepository>();
+            services.AddTransient<IHistoryRepository, HistoryRepository>();
+            services.AddTransient<IUserRepository, UserRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

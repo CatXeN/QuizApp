@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using QuizAppModels.Models.Entities;
 
-namespace QuizzAppAdminApi.Data
+namespace QuizAppAdminApi.Data
 {
     public class DataContext : DbContext
     {

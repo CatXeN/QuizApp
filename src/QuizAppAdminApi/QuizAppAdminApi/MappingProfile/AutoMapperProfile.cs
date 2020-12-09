@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using QuizAppModels.Models.Entities;
 using QuizAppModels.Models.Informations;
 
-namespace QuizzAppAdminApi.Mapper
+namespace QuizAppAdminApi.MappingProfile
 {
     public class AutoMapperProfile : Profile
     {
@@ -16,6 +12,7 @@ namespace QuizzAppAdminApi.Mapper
             CreateMap<Quiz, QuizInformation>().ReverseMap();
             CreateMap<Quest, QuestInformation>().ReverseMap();
             CreateMap<User, UserInformation>().ReverseMap();
+            CreateMap<QuizHistory, QuizHistoryInformation>().ReverseMap();
         }
     }
 }
