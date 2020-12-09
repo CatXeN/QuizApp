@@ -26,6 +26,4 @@
   <ItemGroup>
     <ProjectReference Include="..\QuizAppModels\QuizAppModels.csproj" />
   </ItemGroup>
-
-
 </Project>

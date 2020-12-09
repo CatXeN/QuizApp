@@ -5,11 +5,15 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using QuizAppGameApi.Data;
 using QuizAppGameApi.Hubs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using QuizAppGameApi.Repositories.HistoryQuizes;
+using AutoMapper;
 
 namespace QuizAppGameApi
 {
@@ -26,6 +30,9 @@ namespace QuizAppGameApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddDbContext<DataContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddTransient<IHistoryRepository, HistoryRepository>();
             services.AddSignalR();
             services.AddCors(x => x.AddPolicy("GamePolicy", builder =>
             {

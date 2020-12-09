@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuizAppGameApi", "QuizAppGameApi.csproj", "{A1538880-37EC-4383-ACB0-6674753823C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuizAppGameApi", "QuizAppGameApi.csproj", "{A1538880-37EC-4383-ACB0-6674753823C3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuizAppModels", "..\QuizAppModels\QuizAppModels.csproj", "{C6BBD4E6-BCB4-4C09-B2A5-8CEC4CC7C975}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{A1538880-37EC-4383-ACB0-6674753823C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1538880-37EC-4383-ACB0-6674753823C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1538880-37EC-4383-ACB0-6674753823C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6BBD4E6-BCB4-4C09-B2A5-8CEC4CC7C975}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6BBD4E6-BCB4-4C09-B2A5-8CEC4CC7C975}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6BBD4E6-BCB4-4C09-B2A5-8CEC4CC7C975}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6BBD4E6-BCB4-4C09-B2A5-8CEC4CC7C975}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
