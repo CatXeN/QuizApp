@@ -1,6 +1,6 @@
-﻿using System;
-using FluentValidation;
+﻿using FluentValidation;
 using QuizAppModels.Models.Informations;
+using System;
 
 namespace QuizAppModels.Models.Validators
 {

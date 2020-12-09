@@ -1,10 +1,14 @@
-﻿using AutoMapper;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using AutoMapper;
 using QuizAppModels.Models.Entities;
 using QuizAppModels.Models.Informations;
 
-namespace QuizAppMainApi.MappingProfile
+namespace QuizzAppAdminApi.Mapper
 {
-    public class AutoMapperProfile: Profile
+    public class AutoMapperProfile : Profile
     {
         public AutoMapperProfile()
         {
