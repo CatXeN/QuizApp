@@ -17,7 +17,6 @@ namespace QuizAppAdminApi.Controllers
             _repository = repository;
         }
 
-        [Authorize(Policy = "Admin")]
         [HttpGet]
         public async Task<IActionResult> GetUsers()
         {
@@ -25,7 +24,6 @@ namespace QuizAppAdminApi.Controllers
             return Ok(users);
         }
 
-        [Authorize(Policy = "Admin")]
         [HttpGet("{userId}")]
         public async Task<IActionResult> GetUserById(Guid userId)
         {

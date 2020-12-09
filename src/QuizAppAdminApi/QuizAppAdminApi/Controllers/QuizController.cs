@@ -19,7 +19,6 @@ namespace QuizAppAdminApi.Controllers
             _repository = repository;
         }
 
-        [Authorize(Policy = "Admin")]
         [HttpPost]
         public async Task<IActionResult> AddQuiz(QuizInformation quizInformation)
         {
@@ -27,7 +26,6 @@ namespace QuizAppAdminApi.Controllers
             return Ok();
         }
 
-        [Authorize(Policy = "Admin")]
         [HttpGet]
         public async Task<IActionResult> GetQuizzes()
         {
@@ -35,7 +33,6 @@ namespace QuizAppAdminApi.Controllers
             return Ok(quizzes);
         }
 
-        [Authorize(Policy = "Admin")]
         [HttpGet("{quizId}")]
         public async Task<IActionResult> GetQuizById(Guid quizId)
         {
@@ -43,7 +40,6 @@ namespace QuizAppAdminApi.Controllers
             return Ok(quiz);
         }
 
-        [Authorize(Policy = "Admin")]
         [HttpPut]
         public async Task<IActionResult> UpdateQuiz(QuizInformation quizInformation)
         {
@@ -51,7 +47,6 @@ namespace QuizAppAdminApi.Controllers
             return Ok();
         }
 
-        [Authorize(Policy = "Admin")]
         [HttpDelete("{quizId}")]
         public async Task<IActionResult> DeleteQuiz(Guid quizId)
         {

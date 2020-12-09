@@ -16,7 +16,6 @@ namespace QuizAppAdminApi.Controllers
             _repository = repository;
         }
 
-        [Authorize(Policy = "Admin")]
         [HttpPost]
         public async Task<IActionResult> AddQuizHistory(QuizHistoryInformation quizHistoryInformation)
         {

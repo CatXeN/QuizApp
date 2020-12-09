@@ -18,7 +18,6 @@ namespace QuizAppAdminApi.Controllers
             _repository = repository;
         }
 
-        [Authorize(Policy = "Admin")]
         [HttpPost]
         public async Task<IActionResult> AddCategory(CategoryInformation categoryInformation)
         {
@@ -26,7 +25,6 @@ namespace QuizAppAdminApi.Controllers
             return Ok();
         }
 
-        [Authorize(Policy = "Admin")]
         [HttpGet]
         public async Task<IActionResult> GetCategories()
         {
@@ -34,7 +32,6 @@ namespace QuizAppAdminApi.Controllers
             return Ok(categories);
         }
 
-        [Authorize(Policy = "Admin")]
         [HttpGet("{categoryId}")]
         public async Task<IActionResult> GetCategoryById(Guid categoryId)
         {
@@ -42,7 +39,6 @@ namespace QuizAppAdminApi.Controllers
             return Ok(category);
         }
 
-        [Authorize(Policy = "Admin")]
         [HttpPut]
         public async Task<IActionResult> UpdateCategory(CategoryInformation categoryInformation)
         {
@@ -50,7 +46,6 @@ namespace QuizAppAdminApi.Controllers
             return Ok();
         }
 
-        [Authorize(Policy = "Admin")]
         [HttpDelete("{categoryId}")]
         public async Task<IActionResult> DeleteCategory(Guid categoryId)
         {
