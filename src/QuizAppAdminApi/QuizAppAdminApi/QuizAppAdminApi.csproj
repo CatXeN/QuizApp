@@ -19,12 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Repositories\Categories\" />
-    <Folder Include="Repositories\Quizzes\" />
-    <Folder Include="Repositories\Quests\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\QuizAppModels\QuizAppModels.csproj" />
   </ItemGroup>
 

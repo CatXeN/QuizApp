@@ -5,13 +5,13 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using QuizAppMainApi.Data;
+using QuizAppAdminApi.Data;
 
-namespace QuizAppMainApi.Migrations
+namespace QuizAppAdminApi.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20201208221312_AddedQuestHistory")]
-    partial class AddedQuestHistory
+    [Migration("20201209211939_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

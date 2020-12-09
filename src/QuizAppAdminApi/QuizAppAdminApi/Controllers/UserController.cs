@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using QuizAppAdminApi.Repositories.Users;
 
 namespace QuizAppAdminApi.Controllers
 {
@@ -6,5 +10,27 @@ namespace QuizAppAdminApi.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
+        private readonly IUserRepository _repository;
+
+        public UserController(IUserRepository repository)
+        {
+            _repository = repository;
+        }
+
+        [Authorize(Policy = "Admin")]
+        [HttpGet]
+        public async Task<IActionResult> GetUsers()
+        {
+            var users = await _repository.GetUsers();
+            return Ok(users);
+        }
+
+        [Authorize(Policy = "Admin")]
+        [HttpGet("{userId}")]
+        public async Task<IActionResult> GetUserById(Guid userId)
+        {
+            var user = await _repository.GetUserById(userId);
+            return Ok(user);
+        }
     }
 }
