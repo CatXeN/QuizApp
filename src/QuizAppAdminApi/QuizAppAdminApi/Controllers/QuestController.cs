@@ -1,10 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using QuizAppAdminApi.Repositories.Quests;
 using QuizAppModels.Models.Informations;
-using QuizAppModels.Models.Validators;
 using System;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 
 namespace QuizAppAdminApi.Controllers
 {
@@ -13,7 +11,6 @@ namespace QuizAppAdminApi.Controllers
     public class QuestController : ControllerBase
     {
         private readonly IQuestRepository _repository;
-        private readonly QuestValidator _validator;
         public QuestController(IQuestRepository repository)
         {
             _repository = repository;

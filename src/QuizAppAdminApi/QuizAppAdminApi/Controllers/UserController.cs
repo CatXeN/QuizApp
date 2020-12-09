@@ -1,8 +1,7 @@
-﻿using System;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using QuizAppAdminApi.Repositories.Users;
+using System;
+using System.Threading.Tasks;
 
 namespace QuizAppAdminApi.Controllers
 {
