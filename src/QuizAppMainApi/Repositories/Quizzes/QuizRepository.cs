@@ -44,7 +44,7 @@ namespace QuizAppMainApi.Repositories
             var quiz = await _context.Quizzes.
                 Include(x => x.User).
                 Include(x => x.Category).
-                FirstOrDefaultAsync(x => x.CategoryId == quizId);
+                FirstOrDefaultAsync(x => x.QuizId == quizId);
             return _mapper.Map<QuizInformation>(quiz);
         }
 
