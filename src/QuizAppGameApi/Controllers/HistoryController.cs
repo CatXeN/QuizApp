@@ -18,7 +18,7 @@ namespace QuizAppGameApi.Controllers
             _repository = repository;
         }
 
-        [HttpPost("addQuizHistory")]
+        [HttpPost]
         public async Task<IActionResult> AddQuizHistory(QuizHistoryInformation quizHistoryInformation)
         {
             await _repository.AddHistoryQuiz(quizHistoryInformation);
