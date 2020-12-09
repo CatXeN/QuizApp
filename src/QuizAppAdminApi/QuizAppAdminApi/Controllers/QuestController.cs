@@ -14,7 +14,6 @@ namespace QuizAppAdminApi.Controllers
         public QuestController(IQuestRepository repository)
         {
             _repository = repository;
-
         }
 
         [HttpPost]
