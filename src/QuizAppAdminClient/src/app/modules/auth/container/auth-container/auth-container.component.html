@@ -1,0 +1,13 @@
+<div class="container">
+  <form [formGroup]="register" class="example-form">
+    <h2>Log in</h2>
+    <mat-form-field formControlName="login" class="example-full-width">
+      <mat-label>Username</mat-label>
+      <input type="type" matInput>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Password</mat-label>
+      <input formControlName="password" type="password" matInput>
+    </mat-form-field>
+  </form>
+</div>

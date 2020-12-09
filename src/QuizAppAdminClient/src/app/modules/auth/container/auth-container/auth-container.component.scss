@@ -1,0 +1,18 @@
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: black;
+        
+        mat-form-field {
+            width: 400px;
+        }
+    }
+}

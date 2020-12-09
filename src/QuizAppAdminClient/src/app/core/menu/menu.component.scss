@@ -1,0 +1,52 @@
+.container {
+    width: 300px;
+    height: 100%;
+    background-color: #2F3C4E;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+        color: white;
+    }
+
+    ul {
+        width: 100%;
+    }
+
+    li:hover {
+        color: cyan;
+    }
+
+    .router-link-active {
+        color: cyan;
+    }
+
+    li:focus, li:focus{
+        outline: none;
+    }
+
+    li:hover {
+        color: darkcyan;
+    }
+
+    li {
+        color: white;
+        list-style-type: none;
+        width: 100%;
+        display: flex;
+        font-size: 15px;
+        margin-bottom: 20px;
+
+        .arrow {
+            width: 100%;
+            text-align: right;
+            padding-right: 20px;
+        }
+
+        mat-icon {
+            margin-right: 15px;
+        }
+    }
+}
