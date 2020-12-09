@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using FluentValidation;
+﻿using FluentValidation;
 using QuizAppModels.Models.Informations;
 
 namespace QuizAppModels.Models.Validators

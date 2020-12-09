@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using QuizAppAuthApi.Models.Entities;
+using QuizAppModels.Models.Entities;
 
-namespace QuizAppAuthApi.Data
+namespace QuizAppGameApi.Data
 {
     public class DataContext : DbContext
     {
         public DataContext(DbContextOptions options) : base(options) { }
-        public DbSet<User> Users { get; set; }
+        public DbSet<QuizHistory> QuizHistories { get; set; }
     }
 }

@@ -1,4 +1,3 @@
-using System;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -10,7 +9,7 @@ using Microsoft.OpenApi.Models;
 using QuizAppMainApi.Data;
 using QuizAppMainApi.Repositories;
 using QuizAppMainApi.Repositories.Quests;
-using QuizAppModels.Config;
+using System;
 
 namespace QuizAppMainApi
 {

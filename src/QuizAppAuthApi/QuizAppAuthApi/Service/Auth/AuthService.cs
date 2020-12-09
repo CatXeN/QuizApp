@@ -1,12 +1,12 @@
 ﻿using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using QuizAppAuthApi.Config;
+using QuizAppAuthApi.Repository.Auth;
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
-using QuizAppAuthApi.Config;
-using QuizAppAuthApi.Repository.Auth;
 
 namespace QuizAppAuthApi.Service.Auth
 {
