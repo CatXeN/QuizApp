@@ -9,7 +9,6 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using QuizAppMainApi.Data;
 using QuizAppMainApi.Repositories;
-using QuizAppMainApi.Repositories.HistoryQuizes;
 using QuizAppMainApi.Repositories.Quests;
 using QuizAppModels.Config;
 

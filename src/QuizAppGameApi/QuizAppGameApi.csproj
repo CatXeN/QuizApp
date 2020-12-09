@@ -19,8 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\QuizAppAuthApi\QuizAppAuthApi\QuizAppAuthApi.csproj" />
-    <ProjectReference Include="..\QuizAppMainApi\QuizAppMainApi.csproj" />
     <ProjectReference Include="..\QuizAppModels\QuizAppModels.csproj" />
   </ItemGroup>
 
