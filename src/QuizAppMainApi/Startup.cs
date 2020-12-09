@@ -31,8 +31,6 @@ namespace QuizAppMainApi
             services.AddDbContext<DataContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<ICategoryRepository, CategoryRepository>();
             services.AddTransient<IQuizRepository, QuizRepository>();
-            services.AddTransient<IAuthRepository, AuthRepository>();
-            services.AddTransient<IAuthService, AuthService>();
             services.AddTransient<IQuestRepository, QuestRepository>();
             services.AddSwaggerGen(c =>
             {

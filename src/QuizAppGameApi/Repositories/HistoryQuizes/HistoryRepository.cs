@@ -22,8 +22,8 @@ namespace QuizAppGameApi.Repositories.HistoryQuizes
 
         public async Task AddHistoryQuiz(QuizHistoryInformation quizHistoryInformation)
         {
-            var historyQuiz = _mapper.Map<QuizHistory>(quizHistoryInformation);
-            await _context.QuizHistories.AddAsync(historyQuiz);
+            var quizHistoryToAdd = _mapper.Map<QuizHistory>(quizHistoryInformation);
+            await _context.QuizHistories.AddAsync(quizHistoryToAdd);
 
             await _context.SaveChangesAsync();
         }
