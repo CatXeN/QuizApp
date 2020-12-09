@@ -14,10 +14,10 @@ namespace QuizAppGameApi.Repositories.HistoryQuizes
         private readonly DataContext _context;
         private readonly IMapper _mapper;
 
-        public HistoryRepository(DataContext context, IMapper maper)
+        public HistoryRepository(DataContext context, IMapper mapper)
         {
             _context = context;
-            _mapper = maper;
+            _mapper = mapper;
         }
 
         public async Task AddHistoryQuiz(QuizHistoryInformation quizHistoryInformation)

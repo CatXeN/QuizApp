@@ -33,7 +33,6 @@ namespace QuizAppGameApi
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddDbContext<DataContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<IHistoryRepository, HistoryRepository>();
-            services.AddHttpClient();
             services.AddSignalR();
             services.AddCors(x => x.AddPolicy("GamePolicy", builder =>
             {
