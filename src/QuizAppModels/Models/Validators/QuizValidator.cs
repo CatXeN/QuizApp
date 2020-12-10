@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿using System;
+using FluentValidation;
 using QuizAppModels.Models.Informations;
 
 namespace QuizAppModels.Models.Validators
@@ -12,9 +13,9 @@ namespace QuizAppModels.Models.Validators
             RuleFor(x => x.Description)
                 .NotEmpty().WithMessage("Please specify a description");
             RuleFor(x => x.UserId)
-                .GreaterThan(0).WithMessage("Contact with administrators");
+                .NotEqual(Guid.Empty).WithMessage("Contact with administrators");
             RuleFor(x => x.CategoryId)
-                .GreaterThan(0).WithMessage("Contact with administrators");
+                .NotEqual(Guid.Empty).WithMessage("Contact with administrators");
         }
     }
 }

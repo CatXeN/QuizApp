@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using QuizAppMainApi.Repositories.Quests;
 using QuizAppModels.Models.Informations;
@@ -21,26 +22,26 @@ namespace QuizAppMainApi.Controllers
         [HttpPost]
         public async Task<IActionResult> AddQuest(QuestInformation questInformation)
         {
-            var result = await _validator.ValidateAsync(questInformation);
+            var quest = await _validator.ValidateAsync(questInformation);
 
-            if (!result.IsValid)
-                return BadRequest(result.Errors);
+            if (!quest.IsValid)
+                return BadRequest(quest.Errors);
             
             await _repository.AddQuest(questInformation);
             return Ok();
         }
 
         [HttpGet("single/{questId}")]
-        public async Task<IActionResult> GetQuest(int questId)
+        public async Task<IActionResult> GetQuestById(Guid questId)
         {
-            var quest = await _repository.GetQuest(questId);
+            var quest = await _repository.GetQuestById(questId);
             return Ok(quest);
         }
 
-        [HttpGet("{quizId}")]
-        public async Task<IActionResult> GetQuests(int quizId)
+        [HttpGet("getQuestsById/{quizId}")]
+        public async Task<IActionResult> GetQuestsById(Guid quizId)
         {
-            var quests = await _repository.GetQuests(quizId);
+            var quests = await _repository.GetQuestsById(quizId);
             return Ok(quests);
         }
     }

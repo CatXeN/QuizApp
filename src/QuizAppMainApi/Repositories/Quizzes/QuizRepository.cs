@@ -21,7 +21,7 @@ namespace QuizAppMainApi.Repositories
             _mapper = mapper;
         }
 
-        public async Task<int> AddQuiz(QuizInformation quizInformation)
+        public async Task<Guid> AddQuiz(QuizInformation quizInformation)
         {
             var quiz = _mapper.Map<Quiz>(quizInformation);
             await _context.Quizzes.AddAsync(quiz);
@@ -39,7 +39,7 @@ namespace QuizAppMainApi.Repositories
             return _mapper.Map<IEnumerable<QuizInformation>>(quizzes);
         }
 
-        public async Task<QuizInformation> GetQuizById(int quizId)
+        public async Task<QuizInformation> GetQuizById(Guid quizId)
         {
             var quiz = await _context.Quizzes.
                 Include(x => x.User).
@@ -48,14 +48,13 @@ namespace QuizAppMainApi.Repositories
             return _mapper.Map<QuizInformation>(quiz);
         }
 
-        public async Task<IEnumerable<QuizInformation>> GetTwentyQuiz()
+        public async Task<IEnumerable<QuizInformation>> GetQuizzesFromCategory(Guid categoryId)
         {
             var quizzes = await _context.Quizzes.
-                Include(x => x.User).
-                Include(x => x.Category).
-                OrderByDescending(x => x.QuizId).
-                Take(20).
+                Where(x => x.CategoryId == categoryId).
+                Take(10).
                 ToListAsync();
+
             return _mapper.Map<IEnumerable<QuizInformation>>(quizzes);
         }
     }

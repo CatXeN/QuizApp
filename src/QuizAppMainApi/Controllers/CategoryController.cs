@@ -27,10 +27,10 @@ namespace QuizAppMainApi.Controllers
         [HttpPost]
         public async Task<IActionResult> AddCategory(CategoryInformation categoryInformation)
         {
-            var result = await _validator.ValidateAsync(categoryInformation);
+            var category = await _validator.ValidateAsync(categoryInformation);
 
-            if (!result.IsValid) 
-                return BadRequest(result.Errors);
+            if (!category.IsValid) 
+                return BadRequest(category.Errors);
 
             await _repository.AddCategory(categoryInformation);
             return Ok();
@@ -44,10 +44,17 @@ namespace QuizAppMainApi.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetCategoryById(int id)
+        public async Task<IActionResult> GetCategoryById(Guid id)
         {
             var category = await _repository.GetCategoryById(id);
             return Ok(category);
+        }
+
+        [HttpGet("topCategories")]
+        public async Task<IActionResult> GetTopCategories()
+        {
+            var categories = await _repository.GetTopCategories();
+            return Ok(categories);
         }
     }
 }

@@ -38,10 +38,19 @@ namespace QuizAppMainApi.Repositories
             return _mapper.Map<IEnumerable<CategoryInformation>>(categories);
         }
 
-        public async Task<CategoryInformation> GetCategoryById(int categoryId)
+        public async Task<CategoryInformation> GetCategoryById(Guid categoryId)
         {
             var category = await _context.Categories.FirstOrDefaultAsync(x => x.CategoryId == categoryId);
             return _mapper.Map<CategoryInformation>(category);
+        }
+
+        public async Task<IEnumerable<CategoryInformation>> GetTopCategories()
+        {
+            var categories = await _context.Categories.
+                OrderByDescending(x => x.DoneQuizzess).
+                Take(5).
+                ToListAsync();
+            return _mapper.Map<IEnumerable<CategoryInformation>>(categories);
         }
     }
 }

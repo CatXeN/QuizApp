@@ -10,8 +10,8 @@ using QuizAppMainApi.Data;
 namespace QuizAppMainApi.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20201206180656_Init")]
-    partial class Init
+    [Migration("20201208202323_InitDatabase")]
+    partial class InitDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,10 +23,12 @@ namespace QuizAppMainApi.Migrations
 
             modelBuilder.Entity("QuizAppModels.Models.Entities.Category", b =>
                 {
-                    b.Property<int>("CategoryId")
+                    b.Property<Guid>("CategoryId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                        .HasColumnType("uuid");
+
+                    b.Property<long>("DoneQuizzess")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("Name")
                         .HasColumnType("text");
@@ -38,10 +40,9 @@ namespace QuizAppMainApi.Migrations
 
             modelBuilder.Entity("QuizAppModels.Models.Entities.Quest", b =>
                 {
-                    b.Property<int>("QuestId")
+                    b.Property<Guid>("QuestId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                        .HasColumnType("uuid");
 
                     b.Property<string>("AnswerA")
                         .HasColumnType("text");
@@ -64,8 +65,8 @@ namespace QuizAppMainApi.Migrations
                     b.Property<string>("ImageUrl")
                         .HasColumnType("text");
 
-                    b.Property<int>("QuizId")
-                        .HasColumnType("integer");
+                    b.Property<Guid>("QuizId")
+                        .HasColumnType("uuid");
 
                     b.Property<int>("Time")
                         .HasColumnType("integer");
@@ -79,13 +80,12 @@ namespace QuizAppMainApi.Migrations
 
             modelBuilder.Entity("QuizAppModels.Models.Entities.Quiz", b =>
                 {
-                    b.Property<int>("QuizId")
+                    b.Property<Guid>("QuizId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                        .HasColumnType("uuid");
 
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("integer");
+                    b.Property<Guid>("CategoryId")
+                        .HasColumnType("uuid");
 
                     b.Property<string>("Description")
                         .HasColumnType("text");
@@ -96,8 +96,8 @@ namespace QuizAppMainApi.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("text");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("integer");
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
 
                     b.HasKey("QuizId");
 
@@ -110,10 +110,9 @@ namespace QuizAppMainApi.Migrations
 
             modelBuilder.Entity("QuizAppModels.Models.Entities.User", b =>
                 {
-                    b.Property<int>("UserId")
+                    b.Property<Guid>("UserId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                        .HasColumnType("uuid");
 
                     b.Property<string>("Email")
                         .HasColumnType("text");
