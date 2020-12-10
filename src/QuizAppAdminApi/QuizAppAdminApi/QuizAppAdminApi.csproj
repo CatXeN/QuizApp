@@ -22,10 +22,5 @@
     <ProjectReference Include="..\..\QuizAppModels\QuizAppModels.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Repositories\" />
-  </ItemGroup>
-
 
 </Project>

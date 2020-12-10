@@ -1,14 +1,13 @@
-﻿using AutoMapper;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using QuizAppMainApi.Data;
+using QuizAppAdminApi.Data;
 using QuizAppModels.Models.Entities;
 using QuizAppModels.Models.Informations;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace QuizAppMainApi.Repositories
+namespace QuizAppAdminApi.Repositories.Quizzes
 {
     public class QuizRepository : IQuizRepository
     {
@@ -21,13 +20,11 @@ namespace QuizAppMainApi.Repositories
             _mapper = mapper;
         }
 
-        public async Task<Guid> AddQuiz(QuizInformation quizInformation)
+        public async Task AddQuiz(QuizInformation quizInformation)
         {
             var quiz = _mapper.Map<Quiz>(quizInformation);
             await _context.Quizzes.AddAsync(quiz);
             await _context.SaveChangesAsync();
-
-            return quiz.QuizId;
         }
 
         public async Task<IEnumerable<QuizInformation>> GetQuizzes()
@@ -48,14 +45,20 @@ namespace QuizAppMainApi.Repositories
             return _mapper.Map<QuizInformation>(quiz);
         }
 
-        public async Task<IEnumerable<QuizInformation>> GetQuizzesFromCategory(Guid categoryId)
+        public async Task UpdateQuiz(QuizInformation quizInformation)
         {
-            var quizzes = await _context.Quizzes.
-                Where(x => x.CategoryId == categoryId).
-                Take(10).
-                ToListAsync();
+            var quiz = _mapper.Map<Quiz>(quizInformation);
+            _context.Update(quiz);
 
-            return _mapper.Map<IEnumerable<QuizInformation>>(quizzes);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeleteQuiz(Guid quizId)
+        {
+            var quiz = await _context.Quizzes.FindAsync(quizId);
+            _context.Remove(quiz);
+
+            await _context.SaveChangesAsync();
         }
     }
 }

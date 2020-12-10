@@ -4,7 +4,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:65530",
+      "applicationUrl": "http://localhost:58607",
       "sslPort": 0
     }
   },
@@ -17,11 +17,11 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "QuizzAppAdminApi": {
+    "QuizAppAdminApi": {
       "commandName": "Project",
       "launchBrowser": false,
       "launchUrl": "weatherforecast",
-      "applicationUrl": "http://localhost:65530",
+      "applicationUrl": "http://localhost:58607",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
