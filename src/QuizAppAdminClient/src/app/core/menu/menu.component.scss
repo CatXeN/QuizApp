@@ -1,52 +1,94 @@
+.arrow {
+    margin-left: 40px;
+}
+
+mat-icon {
+    color: white;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+.footer {
+  flex: 1;
+}
+
 .container {
-    width: 300px;
+  width: 100%;
+  min-height: 100%;
+}
+
+.sidenav-content {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  .footer {
+    flex: 1;
+  }
+}
+
+.sidenav {
+  height: 100vh;
+  background: #ffffff;
+  display: flex;
+  top: 0;
+  left: 0;
+  position: fixed;
+  overflow-y: scroll;
+  box-shadow: 0px 8px 16px rgba(47, 90, 149, 0.05);
+
+  &:hover {
+    mat-list-item a {
+      animation-name: slide;
+      animation-duration: 200ms;
+      animation-timing-function: ease-out;
+    }
+  }
+
+  mat-nav-list {
+    padding: 0 10px !important;
     height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
     background-color: #2F3C4E;
 
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+    .spacer {
+      height: 20px;
+    }
+  }
 
-    h2 {
-        color: white;
+  mat-list-item {
+    a {
+      margin-right: 10px;
+      font-weight: 500 !important;
+      color: darkcyan;
     }
 
-    ul {
-        width: 100%;
+    .MainText {
+      color: cyan;
     }
 
-    li:hover {
-        color: cyan;
+    &.logo {
+      height: 64px;
     }
 
-    .router-link-active {
-        color: cyan;
+    .icon {
+      color: darkcyan;
     }
+  }
 
-    li:focus, li:focus{
-        outline: none;
+  .router-link-active {
+    color: cyan;
+
+    a {
+      color: cyan;
     }
+  }
+}
 
-    li:hover {
-        color: darkcyan;
-    }
-
-    li {
-        color: white;
-        list-style-type: none;
-        width: 100%;
-        display: flex;
-        font-size: 15px;
-        margin-bottom: 20px;
-
-        .arrow {
-            width: 100%;
-            text-align: right;
-            padding-right: 20px;
-        }
-
-        mat-icon {
-            margin-right: 15px;
-        }
-    }
+::ng-deep .sidenav {
+  overflow-y: unset !important;
 }

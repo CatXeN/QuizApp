@@ -1,31 +1,36 @@
-<div class="container">
-    <h2>QuizApp</h2>
-
-    <ul>
-        <li routerLink="/home" routerLinkActive="router-link-active">
-            <mat-icon>home</mat-icon>
-            <a>Home</a>
+<mat-drawer-container class="container" autosize>
+    <mat-drawer class="sidenav" mode="side" opened>
+      <mat-nav-list>
+        <div>
+          <mat-list-item class="logo" [routerLink]="['/routePath']" routerLinkActive="router-link-active">
+            <a class="MainText" matLine>QuizApp</a>
+          </mat-list-item>
+          <div class="spacer"></div>
+          <mat-list-item routerLink="/dashboard" routerLinkActive="router-link-active">
+            <mat-icon matListIcon>category</mat-icon>
+            <a matLine>Category</a>
             <mat-icon class="arrow">keyboard_arrow_right</mat-icon>
-        </li>
-        <li routerLink="/category" routerLinkActive="router-link-active">
-            <mat-icon>category</mat-icon>
-            <a>Category</a>
+          </mat-list-item>
+          <mat-list-item routerLink="/webinars" routerLinkActive="router-link-active">
+            <mat-icon matListIcon>school</mat-icon>
+            <a matLine>Quiz</a>
             <mat-icon class="arrow">keyboard_arrow_right</mat-icon>
-        </li>
-        <li>
-            <mat-icon>contact_support</mat-icon>
-            <a>Quiz</a>
+          </mat-list-item>
+          <mat-list-item routerLink="/calendar" routerLinkActive="router-link-active">
+            <mat-icon matListIcon>person</mat-icon>
+            <a matLine>Users</a>
             <mat-icon class="arrow">keyboard_arrow_right</mat-icon>
-        </li>
-        <li>
-            <mat-icon>account_circle</mat-icon>
-            <a>Users</a>
-            <mat-icon class="arrow">keyboard_arrow_right</mat-icon>
-        </li>
-        <li>
-            <mat-icon>history</mat-icon>
-            <a>History</a>
-            <mat-icon class="arrow">keyboard_arrow_right</mat-icon>
-        </li>
-    </ul>
-</div>
+          </mat-list-item>
+          <mat-list-item routerLink="/reviews" routerLinkActive="router-link-active">
+            <mat-icon matListIcon>list_alt</mat-icon>
+            <a matLine class="arrow">History</a>
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </mat-list-item>
+        </div>
+      </mat-nav-list>
+    </mat-drawer>
+    <div class="sidenav-content">
+      <ng-content></ng-content>
+    </div>
+  </mat-drawer-container>
+  
