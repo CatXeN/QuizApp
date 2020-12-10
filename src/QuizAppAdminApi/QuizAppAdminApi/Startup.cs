@@ -35,6 +35,12 @@ namespace QuizAppAdminApi
             services.AddTransient<IQuestRepository, QuestRepository>();
             services.AddTransient<IHistoryRepository, HistoryRepository>();
             services.AddTransient<IUserRepository, UserRepository>();
+            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+            }));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,7 +52,7 @@ namespace QuizAppAdminApi
             }
 
             app.UseRouting();
-
+            app.UseCors("MyPolicy");
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
