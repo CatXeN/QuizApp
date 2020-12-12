@@ -13,6 +13,7 @@ namespace QuizAppGameApi.MappingProfile
         public AutoMapperProfile()
         {
             CreateMap<QuizHistory, QuizHistoryInformation>().ReverseMap();
+            CreateMap<Quiz, QuizInformation>().ReverseMap();
         }
     }
 }

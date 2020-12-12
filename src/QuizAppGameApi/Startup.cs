@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using QuizAppGameApi.Repositories.HistoryQuizes;
 using AutoMapper;
+using QuizAppGameApi.Repositories.Quizzes;
 
 namespace QuizAppGameApi
 {
@@ -33,6 +34,7 @@ namespace QuizAppGameApi
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddDbContext<DataContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<IHistoryRepository, HistoryRepository>();
+            services.AddTransient<IQuizRepository, QuizRepository>();
             services.AddSignalR();
             services.AddCors(x => x.AddPolicy("GamePolicy", builder =>
             {
