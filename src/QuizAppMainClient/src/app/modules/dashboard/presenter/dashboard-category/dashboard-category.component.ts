@@ -1,7 +1,9 @@
+import { Quiz } from './../../../../shared/models/quiz.model';
 import { Category } from './../../../../shared/models/category.model';
 import { DashboardService } from './../../service/dashboard-service.service';
 import { Component, OnInit } from '@angular/core';
-import { Quiz } from 'src/app/shared/models/quiz.model';
+import {map, switchMap} from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard-category',
@@ -11,24 +13,19 @@ import { Quiz } from 'src/app/shared/models/quiz.model';
 export class DashboardCategoryComponent implements OnInit {
 
   category: Category[];
+  categoryNumber = 10;
   quizes: Quiz[];
 
   constructor(private dashboardService: DashboardService) { }
-  
-  ngOnInit() {
-    this.getCategoryName();
-    this.getTop20Quizes();
-  }
 
-  getTop20Quizes() {
-    this.dashboardService.getTop20().subscribe(q => {
-      console.log(q);
-    });
-  }
+  ngOnInit(): void {
+    // this.getCategoryName();
+    }
 
-  getCategoryName() {
-    this.dashboardService.getCategories().subscribe(c => {
-      this.category = c;
-    })
-  }
+  // getCategoryName() {
+  //   return this.dashboardService.getCategories().pipe(switchMap((_categories: any) => 
+  //   this.dashboardService.GetAllQuizes(_categories.categoryId).map(x => {
+  //     this.quizes = x;
+  //   }))) }
+  //   }
 }

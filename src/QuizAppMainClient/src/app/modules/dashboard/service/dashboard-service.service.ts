@@ -16,8 +16,8 @@ getCategories(): Observable<Category[]> {
   return this.http.get<Category[]>(apiEndpoints.Category.getCategoryList);
 }
 
-getTop20(): Observable<Quiz[]> {
-  return this.http.get<Quiz[]>(apiEndpoints.Quiz.getTopQuizes);
+GetAllQuizes(model: Category) {
+  return this.http.get(apiEndpoints.Quiz.getAllQuizesFromCategory.format(String(model.categoryId)));
 }
 
 }

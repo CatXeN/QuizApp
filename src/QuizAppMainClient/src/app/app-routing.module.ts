@@ -13,7 +13,7 @@ const routes: Routes = [
       loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule)
     },
     {
-      path: 'quizSettings/:quizId',
+      path: 'quiz/:quizId',
       loadChildren: () => import('./modules/QuizSettings/QuizSettings.module').then(q => q.QuizSettingsModule)
     }
   ]

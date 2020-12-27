@@ -1,12 +1,12 @@
 import { Category } from './category.model';
 import { User } from './user.model';
 export interface Quiz {
-    quizId: number;
+    quizId: String;
     name: string;
     description: string;
     imageUrl: string;
     userId: number
     user: User;
-    categoryId: number;
+    categoryId: String;
     category: Category;
 }

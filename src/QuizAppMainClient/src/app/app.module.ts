@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainComponent } from './core/layouts/main/main.component';
+import {QuizSettingsModule} from './modules/QuizSettings/QuizSettings.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MainComponent } from './core/layouts/main/main.component';
     BrowserAnimationsModule,
     SharedModule,
     CoreModule,
-    DashboardModule
+    DashboardModule,
+    QuizSettingsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

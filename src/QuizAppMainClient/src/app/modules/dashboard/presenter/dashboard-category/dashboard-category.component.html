@@ -1,26 +1,26 @@
 <div class="main-container">
   <div class="container">
-    <div class="categories">
-      <div class="header">
-        <h2 class="text">Najpopularniejsze</h2>
-        <hr class="line">
-      </div>
-      <div class="category-container" *ngFor="let item of quizes">
-          <app-dashboard-card></app-dashboard-card>
-      </div>
-    </div>
-<!-- 
     <div class="container" *ngFor="let item of category">
       <div class="categories">
         <div class="header">
           <h2 class="text">{{item.name}}</h2>
           <hr class="line">
-        </div>
-        <div class="category-container">
-          <app-dashboard-card></app-dashboard-card>
-          <app-dashboard-card></app-dashboard-card>
-          <app-dashboard-card></app-dashboard-card>
+        <div class="category-container" *ngFor="let quiz of quizes">
+          <div class="card-container">
+            <div class="image-container">
+            <img src="{{quiz.imageUrl}}" class="quiz-img">
+            </div>
+            <div class="header">
+            <p>{{quiz.name}}</p>
+            </div>
+            <div class="infos">
+            <mat-icon>group</mat-icon>
+            <a>2137</a>
+            </div>
+            </div>
+            
         </div>
       </div>
-    </div> -->
+      </div>
+    </div>
 </div>
