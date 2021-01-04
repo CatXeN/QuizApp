@@ -1,10 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using QuizAppGameApi.Repositories.Quizzes;
 using QuizAppModels.Models.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace QuizAppGameApi.Data
 {

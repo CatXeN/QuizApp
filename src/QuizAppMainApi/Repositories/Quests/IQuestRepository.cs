@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections;
+﻿using QuizAppModels.Models.Informations;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using QuizAppModels.Models.Informations;
 
 namespace QuizAppMainApi.Repositories.Quests
 {

@@ -1,8 +1,5 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Internal;
-using Microsoft.IdentityModel.Tokens;
 using QuizAppMainApi.Data;
 using QuizAppModels.Models.Entities;
 using QuizAppModels.Models.Informations;

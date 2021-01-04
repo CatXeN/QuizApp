@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using QuizAppAuthApi.Models.Entities;
 using QuizAppAuthApi.Models.Informations;
 using QuizAppAuthApi.Models.Validators;
 using QuizAppAuthApi.Repository.Auth;
 using QuizAppAuthApi.Service.Auth;
+using System.Threading.Tasks;
 
 namespace QuizAppAuthApi.Controllers
 {

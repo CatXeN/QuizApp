@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuizAppMainApi", "src\QuizA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuizAppModels", "src\QuizAppModels\QuizAppModels.csproj", "{E2CB497F-5B12-446A-B526-38CEF3BF6C9B}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuizAppAdminApi", "src\QuizAppAdminApi\QuizAppAdminApi\QuizAppAdminApi.csproj", "{37AF0E8B-216A-477E-BED0-30E642656331}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{E2CB497F-5B12-446A-B526-38CEF3BF6C9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2CB497F-5B12-446A-B526-38CEF3BF6C9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2CB497F-5B12-446A-B526-38CEF3BF6C9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37AF0E8B-216A-477E-BED0-30E642656331}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37AF0E8B-216A-477E-BED0-30E642656331}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37AF0E8B-216A-477E-BED0-30E642656331}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37AF0E8B-216A-477E-BED0-30E642656331}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +50,7 @@ Global
 		{467652C2-DBFF-4A2A-BBCF-439A35F37DF6} = {63BFE46A-91B9-4266-99D8-C07A2FBC5011}
 		{2BF5F733-50E6-4A5C-BC3E-AD9846692E0E} = {63BFE46A-91B9-4266-99D8-C07A2FBC5011}
 		{E2CB497F-5B12-446A-B526-38CEF3BF6C9B} = {63BFE46A-91B9-4266-99D8-C07A2FBC5011}
+		{37AF0E8B-216A-477E-BED0-30E642656331} = {63BFE46A-91B9-4266-99D8-C07A2FBC5011}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B403C599-06A2-46E3-8481-52518F18CE22}

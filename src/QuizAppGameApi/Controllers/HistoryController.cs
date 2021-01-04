@@ -1,9 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using QuizAppGameApi.Repositories.HistoryQuizes;
 using QuizAppModels.Models.Informations;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace QuizAppGameApi.Controllers
