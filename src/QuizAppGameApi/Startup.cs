@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using QuizAppGameApi.Data;
 using QuizAppGameApi.Hubs;
 using QuizAppGameApi.Repositories.HistoryQuizes;
+using QuizAppGameApi.Repositories.Quizzes;
 using System;
 
 namespace QuizAppGameApi
@@ -28,6 +29,7 @@ namespace QuizAppGameApi
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddDbContext<DataContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<IHistoryRepository, HistoryRepository>();
+            services.AddTransient<IQuizRepository, QuizRepository>();
             services.AddSignalR();
             services.AddCors(x => x.AddPolicy("GamePolicy", builder =>
             {

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using QuizAppGameApi.Repositories.Quizzes;
 using QuizAppModels.Models.Entities;
 
 namespace QuizAppGameApi.Data
@@ -7,5 +8,6 @@ namespace QuizAppGameApi.Data
     {
         public DataContext(DbContextOptions options) : base(options) { }
         public DbSet<QuizHistory> QuizHistories { get; set; }
+        public DbSet<Quiz> Quizzes { get; set; } 
     }
 }
